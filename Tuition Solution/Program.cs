@@ -15,5 +15,3 @@ namespace Tuition_Solution
         }
     }
 }
-// This is a comment made by Mohammad Saib
-// This is a second comment made by Mohammad Saib
