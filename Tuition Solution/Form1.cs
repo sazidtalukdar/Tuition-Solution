@@ -9,7 +9,7 @@ namespace Tuition_Solution
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string s = "sazid";//class
+            string s = "sazid";//class to path
         }
     }
 }
