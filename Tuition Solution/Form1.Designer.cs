@@ -57,6 +57,7 @@
             loginbt.TabIndex = 2;
             loginbt.Text = "Login";
             loginbt.UseVisualStyleBackColor = true;
+            loginbt.Click += login_bt_click;
             // 
             // singupbt
             // 
@@ -66,6 +67,7 @@
             singupbt.TabIndex = 3;
             singupbt.Text = "Singup";
             singupbt.UseVisualStyleBackColor = true;
+            singupbt.Click += signupButton_Click;
             // 
             // forgotpass
             // 
@@ -80,7 +82,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(732, 495);
             Controls.Add(forgotpass);
             Controls.Add(singupbt);
             Controls.Add(loginbt);
