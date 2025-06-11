@@ -18,7 +18,7 @@ namespace Tuition_Solution
                     conn.Open();
                     return Convert.ToInt32(cmd.ExecuteScalar());
                 }
-                //conn.Close();
+                //conn.Close();//
             }
         }
 
@@ -32,6 +32,16 @@ namespace Tuition_Solution
                 conn.Close();
 
             }
+        }
+
+
+
+        public static SqlDataReader ExecuteReader(string query)
+        {
+            SqlConnection conn = new SqlConnection(_connectionString);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
         }
     }
 }
