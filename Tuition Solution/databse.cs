@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace Tuition_Solution
 {
-    public class databse
+    public class databse //
     {
         private static readonly string _connectionString = "Server=localhost;Database=C#;User Id=sa;Password=sazid999;";
 
