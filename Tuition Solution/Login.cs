@@ -73,6 +73,9 @@ namespace Tuition_Solution
                         MessageBox.Show("Login successful!");
                         if (role == "ADMIN")
                         {
+                            var s = new Forgot();
+                            s.Show();
+                            this.Hide();
 
                         }
                         else if (role == "TEACHER")

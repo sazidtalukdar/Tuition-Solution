@@ -11,11 +11,11 @@ namespace Tuition_Solution
     internal class otp_and_code
     {
 
-        public static int get_code()
+        public static string get_code()
         {
             var random = new Random();
             int code = random.Next(100000, 999999); 
-            return code;
+            return $"{code}";
         }
 
         public static void SendSms(string number,string sms)
@@ -35,10 +35,10 @@ namespace Tuition_Solution
 
 
 
-        public static bool verify_code( int user_code , string phone_no)
+        public static bool verify_code( string user_code , string phone_no)
         {
 
-            int code = get_code();
+            String code = get_code();
 
             SendSms(phone_no, $"your otp is {code} Do not share your opt with onay one . Thank you");
 
