@@ -30,8 +30,8 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userbox = new TextBox();
+            passbox = new TextBox();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
@@ -39,65 +39,71 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(124, 139);
+            label1.Location = new Point(87, 83);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(59, 25);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(124, 213);
+            label2.Location = new Point(87, 128);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(59, 25);
+            label2.Size = new Size(38, 15);
             label2.TabIndex = 1;
             label2.Text = "label2";
             // 
-            // textBox1
+            // userbox
             // 
-            textBox1.Location = new Point(426, 113);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(198, 31);
-            textBox1.TabIndex = 2;
+            userbox.Location = new Point(298, 68);
+            userbox.Margin = new Padding(2, 2, 2, 2);
+            userbox.Name = "userbox";
+            userbox.Size = new Size(140, 23);
+            userbox.TabIndex = 2;
             // 
-            // textBox2
+            // passbox
             // 
-            textBox2.Location = new Point(426, 213);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(198, 31);
-            textBox2.TabIndex = 3;
+            passbox.Location = new Point(298, 128);
+            passbox.Margin = new Padding(2, 2, 2, 2);
+            passbox.Name = "passbox";
+            passbox.Size = new Size(140, 23);
+            passbox.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(174, 419);
+            button1.Location = new Point(122, 251);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(192, 56);
+            button1.Size = new Size(134, 34);
             button1.TabIndex = 4;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(436, 293);
+            button2.Location = new Point(305, 176);
+            button2.Margin = new Padding(2, 2, 2, 2);
             button2.Name = "button2";
-            button2.Size = new Size(243, 182);
+            button2.Size = new Size(170, 109);
             button2.TabIndex = 5;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += login_bt_click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1046, 825);
+            ClientSize = new Size(732, 495);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(passbox);
+            Controls.Add(userbox);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Login";
             Text = "Login";
             Load += Form1_Load;
@@ -109,8 +115,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userbox;
+        private TextBox passbox;
         private Button button1;
         private Button button2;
     }
