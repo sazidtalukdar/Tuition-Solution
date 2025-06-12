@@ -34,6 +34,7 @@
             passbox = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -92,11 +93,22 @@
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            button3.Location = new Point(523, 193);
+            button3.Margin = new Padding(2);
+            button3.Name = "button3";
+            button3.Size = new Size(170, 109);
+            button3.TabIndex = 6;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(732, 495);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(passbox);
@@ -117,5 +129,6 @@
         private TextBox passbox;
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }
