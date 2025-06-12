@@ -27,7 +27,8 @@ namespace Tuition_Solution
 
 
         }
-
+        //string cpu_id = log_res_handel.GetProcessorId();
+        //    this.cpu_id = cpu_id;
 
         private void login_bt_click(object sender, EventArgs e)
 
