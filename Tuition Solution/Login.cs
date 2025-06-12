@@ -32,7 +32,7 @@ namespace Tuition_Solution
         private void login_bt_click(object sender, EventArgs e)
 
         {
-            userbox.Visible = false;
+            
 
             string query1 = $"SELECT phone_number, role, status,cpu_id FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";
             string query = $"SELECT COUNT(*) FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";

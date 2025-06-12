@@ -21,12 +21,8 @@ namespace Tuition_Solution
             return $"{code}";
         }
 
-        public void SendSms(string number)
+        public void SendSms(string number, string sms)
         {
-            string code = get_code();
-            this.otp = code;
-
-            string sms = $"Your otp is {code}.  Do not share your opt with onay one . Thank you";
             string query = $"select apikey,senderid from api ";
 
             SqlDataReader reader = databse.ExecuteReader(query);
@@ -46,6 +42,11 @@ namespace Tuition_Solution
                     reader.Close();
                 }
             }
+        }
+
+        public void set_code(string code)
+        {
+            this.otp = code;
         }
 
 

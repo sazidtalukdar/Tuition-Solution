@@ -34,36 +34,43 @@ namespace Tuition_Solution
 
         private void search_Click(object sender, EventArgs e)
         {
-            if (fbox2.Text==null)
+            if (fbox2.Text == null)
             {
                 MessageBox.Show("Please enter your phone number.");
                 return;
             }
-
-            string query = $"SELECT Name FROM users WHERE [phone_number] = '{fbox2.Text}'";
-            SqlDataReader reader = databse.ExecuteReader(query);
-
-            if (reader.Read())
-            {
-                string name = reader["Name"].ToString();
-                phoneNumber = fbox2.Text;
-
-                label1.Text = $"Welcome, {name}";
-                fbox1.Visible =true;
-                fbox2.Visible = true;
-                fbox2.Text = "";
-                fbox3.Visible = true;
-                search.Visible = false;
-                regester.Visible = true;
-
-                otpTool.SendSms(phoneNumber);
-            }
             else
             {
-                MessageBox.Show("Phone number not found.");
-            }
 
-            reader.Close();
+                string query = $"SELECT Name FROM users WHERE [phone_number] = '{fbox2.Text}'";
+                SqlDataReader reader = databse.ExecuteReader(query);
+
+
+                if (reader.Read())
+                {
+                    string name = reader["Name"].ToString();
+                    phoneNumber = fbox2.Text;
+
+                    label1.Text = $"Welcome, {name}";
+                    fbox1.Visible = true;
+                    fbox2.Visible = true;
+                    fbox2.Text = "";
+                    fbox3.Visible = true;
+                    search.Visible = false;
+                    regester.Visible = true;
+
+                    string code = otpTool.get_code();
+                    string sms = $"Your otp is {code}.  Do not share your opt with any one . Thank you";
+                    otpTool.set_code(code);
+                    otpTool.SendSms(phoneNumber,sms);
+                }
+                else
+                {
+                    MessageBox.Show("Phone number not found.");
+                }
+
+                reader.Close();
+            }
         }
 
         private void register_Click(object sender, EventArgs e)
