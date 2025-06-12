@@ -27,12 +27,13 @@ namespace Tuition_Solution
 
 
         }
-
+        //string cpu_id = log_res_handel.GetProcessorId();
+        //    this.cpu_id = cpu_id;
 
         private void login_bt_click(object sender, EventArgs e)
 
         {
-            userbox.Visible = false;
+            
 
             string query1 = $"SELECT phone_number, role, status,cpu_id FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";
             string query = $"SELECT COUNT(*) FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";
@@ -73,6 +74,9 @@ namespace Tuition_Solution
                         MessageBox.Show("Login successful!");
                         if (role == "ADMIN")
                         {
+                            var s = new Forgot();
+                            s.Show();
+                            this.Hide();
 
                         }
                         else if (role == "TEACHER")

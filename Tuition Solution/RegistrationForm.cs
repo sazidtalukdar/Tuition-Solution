@@ -27,8 +27,8 @@ namespace Tuition_Solution
 
         private void singup_click(object sender, EventArgs e)
         {
-            string quary = $"insert into users (username,password,phone_number,role,status,cpu_id) values ('{userbox.Text}','{passbox.Text}','{phonebox.Text}','{role}','{saztus}','cut')";
-            databse.ExecuteNonQuery(quary);
+            //string quary = $"insert into users (username,password,phone_number,role,status,cpu_id) values ('{userbox.Text}','{passbox.Text}','{phonebox.Text}','{role}','{saztus}','cut')";
+            //databse.ExecuteNonQuery(quary);
 
         }
 

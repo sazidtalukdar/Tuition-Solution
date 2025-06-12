@@ -59,7 +59,7 @@
             // userbox
             // 
             userbox.Location = new Point(298, 68);
-            userbox.Margin = new Padding(2, 2, 2, 2);
+            userbox.Margin = new Padding(2);
             userbox.Name = "userbox";
             userbox.Size = new Size(140, 23);
             userbox.TabIndex = 2;
@@ -67,7 +67,7 @@
             // passbox
             // 
             passbox.Location = new Point(298, 128);
-            passbox.Margin = new Padding(2, 2, 2, 2);
+            passbox.Margin = new Padding(2);
             passbox.Name = "passbox";
             passbox.Size = new Size(140, 23);
             passbox.TabIndex = 3;
@@ -75,7 +75,7 @@
             // button1
             // 
             button1.Location = new Point(122, 251);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(134, 34);
             button1.TabIndex = 4;
@@ -85,13 +85,12 @@
             // button2
             // 
             button2.Location = new Point(305, 176);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(170, 109);
             button2.TabIndex = 5;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += login_bt_click;
             // 
             // Login
             // 
@@ -106,7 +105,6 @@
             Controls.Add(label1);
             Name = "Login";
             Text = "Login";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
