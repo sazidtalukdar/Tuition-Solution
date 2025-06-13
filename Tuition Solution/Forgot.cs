@@ -29,6 +29,10 @@ namespace Tuition_Solution
             fbox1.Visible = false;
             fbox3.Visible = false;
             regester.Visible = false;
+            welcome.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
 
         }
 
@@ -50,19 +54,23 @@ namespace Tuition_Solution
                 {
                     string name = reader["Name"].ToString();
                     phoneNumber = fbox2.Text;
-
-                    label1.Text = $"Welcome, {name}";
+                    label1.Visible = false;
+                    welcome.Visible = true;
+                    welcome.Text = $"Welcome, {name}";
                     fbox1.Visible = true;
                     fbox2.Visible = true;
                     fbox2.Text = "";
                     fbox3.Visible = true;
                     search.Visible = false;
                     regester.Visible = true;
+                    label3.Visible = true;
+                    label4.Visible = true;
+                    label5.Visible = true;
 
                     string code = otpTool.get_code();
                     string sms = $"Your otp is {code}.  Do not share your otp with any one . Thank you";
                     otpTool.set_code(code);
-                    otpTool.SendSms(phoneNumber,sms);
+                    otpTool.SendSms(phoneNumber, sms);
                 }
                 else
                 {
@@ -75,7 +83,7 @@ namespace Tuition_Solution
 
         private void register_Click(object sender, EventArgs e)
         {
-            if (fbox1.Text == null && fbox2.Text == null && fbox3.Text == null)
+            if (fbox1.Text == "" && fbox2.Text == "" && fbox3.Text == "")
             {
                 MessageBox.Show("Please fill in all fields.");
                 return;
@@ -99,10 +107,23 @@ namespace Tuition_Solution
                 databse.ExecuteNonQuery(query);
 
                 MessageBox.Show("Password updated successfully.");
-               
+
             }
 
         }
+
+
+
+
+        private void back_login_click(object sender , EventArgs e)
+        {
+            var login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+
+
     }
 }
 

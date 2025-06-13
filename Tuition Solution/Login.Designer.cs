@@ -32,13 +32,12 @@
             label1 = new Label();
             label2 = new Label();
             userbox = new TextBox();
-            passbox = new TextBox();
             button2 = new Button();
             linkLabel2 = new LinkLabel();
             linkLabel1 = new LinkLabel();
-            radioButton1 = new RadioButton();
             label3 = new Label();
             pictureBox2 = new PictureBox();
+            show_pass = new CheckBox();
             textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -69,6 +68,7 @@
             // 
             // userbox
             // 
+            userbox.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userbox.Location = new Point(265, 133);
             userbox.Margin = new Padding(2);
             userbox.Multiline = true;
@@ -76,21 +76,12 @@
             userbox.Size = new Size(206, 34);
             userbox.TabIndex = 2;
             // 
-            // passbox
-            // 
-            passbox.Location = new Point(265, 213);
-            passbox.Margin = new Padding(2);
-            passbox.Multiline = true;
-            passbox.Name = "passbox";
-            passbox.Size = new Size(206, 36);
-            passbox.TabIndex = 3;
-            // 
             // button2
             // 
             button2.BackColor = Color.Maroon;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(212, 316);
+            button2.Location = new Point(241, 318);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(122, 35);
@@ -103,12 +94,13 @@
             // 
             linkLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             linkLabel2.LinkColor = Color.Green;
-            linkLabel2.Location = new Point(216, 386);
+            linkLabel2.Location = new Point(230, 373);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(255, 52);
             linkLabel2.TabIndex = 7;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Create a Account";
+            linkLabel2.Click += create_click;
             // 
             // linkLabel1
             // 
@@ -120,18 +112,7 @@
             linkLabel1.TabIndex = 8;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(348, 280);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(146, 25);
-            radioButton1.TabIndex = 9;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Show Password";
-            radioButton1.UseVisualStyleBackColor = true;
+            linkLabel1.Click += forgot_click;
             // 
             // label3
             // 
@@ -153,14 +134,28 @@
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
+            // show_pass
+            // 
+            show_pass.AutoSize = true;
+            show_pass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            show_pass.Location = new Point(324, 275);
+            show_pass.Name = "show_pass";
+            show_pass.Size = new Size(147, 25);
+            show_pass.TabIndex = 13;
+            show_pass.Text = "Show Password";
+            show_pass.UseVisualStyleBackColor = true;
+            show_pass.CheckedChanged += show_pass_click;
+            // 
             // textBox1
             // 
-            textBox1.Location = new Point(393, 11);
+            textBox1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(265, 207);
             textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(206, 34);
-            textBox1.TabIndex = 13;
+            textBox1.TabIndex = 14;
+            textBox1.TextChanged += passbox_click;
             // 
             // Login
             // 
@@ -168,13 +163,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(981, 520);
             Controls.Add(textBox1);
+            Controls.Add(show_pass);
             Controls.Add(pictureBox2);
             Controls.Add(label3);
-            Controls.Add(radioButton1);
             Controls.Add(linkLabel1);
             Controls.Add(linkLabel2);
             Controls.Add(button2);
-            Controls.Add(passbox);
             Controls.Add(userbox);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -194,13 +188,12 @@
         private Label label1;
         private Label label2;
         private TextBox userbox;
-        private TextBox passbox;
         private Button button2;
         private LinkLabel linkLabel2;
         private LinkLabel linkLabel1;
-        private RadioButton radioButton1;
         private Label label3;
         private PictureBox pictureBox2;
+        private CheckBox show_pass;
         private TextBox textBox1;
     }
 }

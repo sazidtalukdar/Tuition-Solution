@@ -22,27 +22,50 @@ namespace Tuition_Solution
 
         private void singup_Click(object sender, EventArgs e)
         {
-            if (valid_user(usernamebox.Text))
+            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" ||gender_check()=="" || gender_check()=="" )
             {
-                string query = $"INSERT INTO users (phone_number, Name, username, password, gender, role, status, cpu_id) " +
-                               $"VALUES ('{phonebox.Text}', '{nmaebox.Text}', '{usernamebox.Text}', '{passbox.Text}', " +
-                               $"'{gender_check()}', '{role_check()}', 'SUSPENDED', '{log_res.GetProcessorId()}')";
+                MessageBox.Show("Please fill in all fields.");
 
-                int res = databse.ExecuteNonQuery(query); 
-
-                if (res > 0)
-                {
-                    MessageBox.Show("Registration  Successfull");
-                }
-                else
-                {
-                    MessageBox.Show("Signup failed. Please try again.");
-                }
             }
             else
             {
-                MessageBox.Show("Username already exists");
+                if (valid_user(usernamebox.Text))
+                {
+                    if (passbox.Text != confirmpassbox.Text)
+                    {
+                        MessageBox.Show("Both Password Aren't Match");
+                    }
+                    else
+                    {
+                        string query = $"INSERT INTO users (phone_number, Name, username, password, gender, role, status, cpu_id) " +
+                                       $"VALUES ('{phonebox.Text}', '{nmaebox.Text}', '{usernamebox.Text}', '{passbox.Text}', " +
+                                       $"'{gender_check()}', '{role_check()}', 'SUSPENDED', '{log_res.GetProcessorId()}')";
+
+                        int res = databse.ExecuteNonQuery(query);
+
+                        if (res > 0)
+                        {
+                            MessageBox.Show("Registration  Successfull");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Signup failed. Please try again.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username already exists");
+                }
             }
+        }
+
+
+        private void returnbt_click(object sender, EventArgs e)
+        {
+            var login = new Login();
+            login.Show();
+            this.Hide();
         }
 
 
@@ -53,9 +76,13 @@ namespace Tuition_Solution
             {
                 return gender_male.Text.ToString();
             }
-            else
+            else if(gender_female.Checked)
             {
                 return gender_female.Text.ToString();
+            }
+            else
+            {
+                return "";
             }
         }
 
@@ -69,9 +96,13 @@ namespace Tuition_Solution
             {
                 return role_student.Text.ToString();
             }
-            else
+            else if(role_teacher.Checked)
             {
                 return role_teacher.Text.ToString();
+            }
+            else
+            {
+                return "";
             }
         }
 
@@ -79,7 +110,7 @@ namespace Tuition_Solution
         private bool valid_user(string username)
         {
             string query = $"SELECT COUNT(*) FROM users WHERE username = '{username}'";
-            int count =(int) databse.ExecuteScalar(query);
+            int count = (int)databse.ExecuteScalar(query);
             if (count == 0)
             {
                 return true;
@@ -91,7 +122,14 @@ namespace Tuition_Solution
             }
         }
 
+        private void registration_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

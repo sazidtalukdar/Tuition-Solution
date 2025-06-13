@@ -32,17 +32,17 @@
             pictureBox1 = new PictureBox();
             label9 = new Label();
             panel1 = new Panel();
+            gender = new GroupBox();
+            gender_male = new RadioButton();
+            gender_female = new RadioButton();
             usernamebox = new TextBox();
-            linkLabel1 = new LinkLabel();
+            return_bt = new LinkLabel();
             label8 = new Label();
             singup_bt = new Button();
             confirmpassbox = new TextBox();
             label7 = new Label();
             passbox = new TextBox();
             label6 = new Label();
-            gender_female = new RadioButton();
-            gender_male = new RadioButton();
-            label5 = new Label();
             phonebox = new TextBox();
             label4 = new Label();
             nmaebox = new TextBox();
@@ -53,6 +53,7 @@
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            gender.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -79,18 +80,16 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(128, 255, 255, 255);
+            panel1.Controls.Add(gender);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(usernamebox);
-            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(return_bt);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(singup_bt);
             panel1.Controls.Add(confirmpassbox);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(passbox);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(gender_female);
-            panel1.Controls.Add(gender_male);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(phonebox);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(nmaebox);
@@ -105,6 +104,47 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(478, 516);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
+            // 
+            // gender
+            // 
+            gender.Controls.Add(gender_male);
+            gender.Controls.Add(gender_female);
+            gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gender.Location = new Point(61, 277);
+            gender.Name = "gender";
+            gender.Size = new Size(375, 40);
+            gender.TabIndex = 22;
+            gender.TabStop = false;
+            gender.Text = "Gender";
+            // 
+            // gender_male
+            // 
+            gender_male.AutoSize = true;
+            gender_male.BackColor = Color.Transparent;
+            gender_male.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            gender_male.Location = new Point(116, 16);
+            gender_male.Margin = new Padding(2);
+            gender_male.Name = "gender_male";
+            gender_male.Size = new Size(61, 24);
+            gender_male.TabIndex = 9;
+            gender_male.TabStop = true;
+            gender_male.Text = "Male";
+            gender_male.UseVisualStyleBackColor = false;
+            // 
+            // gender_female
+            // 
+            gender_female.AutoSize = true;
+            gender_female.BackColor = Color.Transparent;
+            gender_female.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            gender_female.Location = new Point(216, 16);
+            gender_female.Margin = new Padding(2);
+            gender_female.Name = "gender_female";
+            gender_female.Size = new Size(76, 24);
+            gender_female.TabIndex = 10;
+            gender_female.TabStop = true;
+            gender_female.Text = "Female";
+            gender_female.UseVisualStyleBackColor = false;
             // 
             // usernamebox
             // 
@@ -116,18 +156,19 @@
             usernamebox.Size = new Size(370, 30);
             usernamebox.TabIndex = 20;
             // 
-            // linkLabel1
+            // return_bt
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.Transparent;
-            linkLabel1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            linkLabel1.LinkColor = Color.FromArgb(28, 127, 168);
-            linkLabel1.Location = new Point(234, 491);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(58, 15);
-            linkLabel1.TabIndex = 19;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Click here";
+            return_bt.AutoSize = true;
+            return_bt.BackColor = Color.Transparent;
+            return_bt.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            return_bt.LinkColor = Color.FromArgb(28, 127, 168);
+            return_bt.Location = new Point(234, 491);
+            return_bt.Name = "return_bt";
+            return_bt.Size = new Size(58, 15);
+            return_bt.TabIndex = 19;
+            return_bt.TabStop = true;
+            return_bt.Text = "Click here";
+            return_bt.Click += returnbt_click;
             // 
             // label8
             // 
@@ -198,46 +239,6 @@
             label6.Size = new Size(81, 20);
             label6.TabIndex = 11;
             label6.Text = "Password :";
-            // 
-            // gender_female
-            // 
-            gender_female.AutoSize = true;
-            gender_female.BackColor = Color.Transparent;
-            gender_female.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            gender_female.Location = new Point(194, 294);
-            gender_female.Margin = new Padding(2);
-            gender_female.Name = "gender_female";
-            gender_female.Size = new Size(76, 24);
-            gender_female.TabIndex = 10;
-            gender_female.TabStop = true;
-            gender_female.Text = "Female";
-            gender_female.UseVisualStyleBackColor = false;
-            // 
-            // gender_male
-            // 
-            gender_male.AutoSize = true;
-            gender_male.BackColor = Color.Transparent;
-            gender_male.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            gender_male.Location = new Point(94, 294);
-            gender_male.Margin = new Padding(2);
-            gender_male.Name = "gender_male";
-            gender_male.Size = new Size(61, 24);
-            gender_male.TabIndex = 9;
-            gender_male.TabStop = true;
-            gender_male.Text = "Male";
-            gender_male.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label5.Location = new Point(59, 272);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(67, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Gender :";
             // 
             // phonebox
             // 
@@ -343,11 +344,17 @@
             ClientSize = new Size(981, 520);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "registration";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "registration";
+            Load += registration_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            gender.ResumeLayout(false);
+            gender.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -357,7 +364,7 @@
         private Label label9;
         private Panel panel1;
         private TextBox usernamebox;
-        private LinkLabel linkLabel1;
+        private LinkLabel return_bt;
         private Label label8;
         private Button singup_bt;
         private TextBox confirmpassbox;
@@ -375,5 +382,6 @@
         private RadioButton role_student;
         private Label label2;
         private Label label1;
+        private GroupBox gender;
     }
 }
