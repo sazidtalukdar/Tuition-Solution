@@ -1,6 +1,6 @@
 ﻿namespace Tuition_Solution
 {
-    partial class RegistrationForm
+    partial class res
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
             linkLabel1 = new LinkLabel();
             label8 = new Label();
             button1 = new Button();
@@ -50,50 +48,9 @@
             radioButton1 = new RadioButton();
             label2 = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2025_06_12_at_17_05_04_3686d490;
-            pictureBox1.Location = new Point(-4, -2);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(332, 577);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(128, 255, 255, 255);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(checkBox2);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(checkBox1);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(radioButton4);
-            panel1.Controls.Add(radioButton3);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(radioButton2);
-            panel1.Controls.Add(radioButton1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Font = new Font("Segoe UI", 7.8F);
-            panel1.Location = new Point(375, 22);
-            panel1.Margin = new Padding(2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(338, 529);
-            panel1.TabIndex = 1;
             // 
             // linkLabel1
             // 
@@ -141,7 +98,6 @@
             checkBox2.TabIndex = 16;
             checkBox2.Text = "Show Password";
             checkBox2.UseVisualStyleBackColor = false;
-            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // textBox4
             // 
@@ -199,7 +155,6 @@
             label6.Size = new Size(81, 20);
             label6.TabIndex = 11;
             label6.Text = "Password :";
-            label6.Click += label6_Click;
             // 
             // radioButton4
             // 
@@ -214,7 +169,6 @@
             radioButton4.TabStop = true;
             radioButton4.Text = "Female";
             radioButton4.UseVisualStyleBackColor = false;
-            radioButton4.CheckedChanged += radioButton4_CheckedChanged;
             // 
             // radioButton3
             // 
@@ -229,7 +183,6 @@
             radioButton3.TabStop = true;
             radioButton3.Text = "Male";
             radioButton3.UseVisualStyleBackColor = false;
-            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
             // 
             // label5
             // 
@@ -274,7 +227,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(233, 27);
             textBox1.TabIndex = 5;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
@@ -341,18 +293,44 @@
             label1.TabIndex = 0;
             label1.Text = "Registration";
             // 
-            // RegistrationForm
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(128, 255, 255, 255);
+            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(checkBox2);
+            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(checkBox1);
+            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(radioButton4);
+            panel1.Controls.Add(radioButton3);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(radioButton2);
+            panel1.Controls.Add(radioButton1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Font = new Font("Segoe UI", 7.8F);
+            panel1.Location = new Point(361, 29);
+            panel1.Margin = new Padding(2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(359, 506);
+            panel1.TabIndex = 2;
+            // 
+            // res
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gainsboro;
-            ClientSize = new Size(758, 575);
+            ClientSize = new Size(800, 546);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
-            Name = "RegistrationForm";
-            Text = "RegistrationForm";
-            Load += RegistrationForm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Name = "res";
+            Text = "res";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -360,27 +338,26 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Panel panel1;
-        private Label label1;
-        private Label label2;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private TextBox textBox1;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox2;
-        private Label label5;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private Label label6;
-        private TextBox textBox3;
-        private CheckBox checkBox1;
-        private TextBox textBox4;
-        private Label label7;
-        private CheckBox checkBox2;
-        private Button button1;
         private LinkLabel linkLabel1;
         private Label label8;
+        private Button button1;
+        private CheckBox checkBox2;
+        private TextBox textBox4;
+        private Label label7;
+        private CheckBox checkBox1;
+        private TextBox textBox3;
+        private Label label6;
+        private RadioButton radioButton4;
+        private RadioButton radioButton3;
+        private Label label5;
+        private TextBox textBox2;
+        private Label label4;
+        private TextBox textBox1;
+        private Label label3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private Label label2;
+        private Label label1;
+        private Panel panel1;
     }
 }
