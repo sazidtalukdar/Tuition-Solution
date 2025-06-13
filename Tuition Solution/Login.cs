@@ -12,7 +12,7 @@ namespace Tuition_Solution
         private string phone { get; set; }
         private string role { get; set; }
         private string status { get; set; }
-        private string cpu_id { get; set; } 
+        private string cpu_id { get; set; }
         private string cpu_db_id { get; set; }
 
         public Login()
@@ -33,7 +33,7 @@ namespace Tuition_Solution
         private void login_bt_click(object sender, EventArgs e)
 
         {
-            
+
 
             string query1 = $"SELECT phone_number, role, status,cpu_id FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";
             string query = $"SELECT COUNT(*) FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";
@@ -56,13 +56,14 @@ namespace Tuition_Solution
 
                 }
 
-                if (cpu_db_id == "cut"){
+                if (cpu_db_id == "cut")
+                {
                     string query2 = $"update users set cpu_id = '{cpu_id}' where username = '{userbox.Text}'";
                     databse.ExecuteNonQuery(query2);
-                    this.cpu_db_id = cpu_id; 
+                    this.cpu_db_id = cpu_id;
                 }
                 if (cpu_id != cpu_db_id)
-                { 
+                {
                     MessageBox.Show("This computer is not registered for your account. Please contact the admin.");
                     return;
                 }
@@ -98,14 +99,6 @@ namespace Tuition_Solution
             {
                 MessageBox.Show(" Wrong username or password.");
             }
-            }
-
-
-
-       
-
-
-
-
+        }
     }
 }
