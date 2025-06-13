@@ -4,44 +4,54 @@ using System.Data.SqlClient;
 
 namespace Tuition_Solution
 {
-    public class databse //
+    public class databse
     {
-        private static readonly string _connectionString = "Server=localhost;Database=C#;User Id=sa;Password=sazid999;";
+        private static readonly string con = "Server=localhost;Database=C#;User Id=sa;Password=sazid999;";
 
-      
-
-        public static int ExecuteQuery(string query)
+        // for count
+        public static int ExecuteScalar(string query)
         {
-            using (SqlConnection conn = new SqlConnection(_connectionString)) {
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    return Convert.ToInt32(cmd.ExecuteScalar());
-                }
-                //conn.Close();//
-            }
-        }
-
-        public static void ExecuteNonQuery(string query)
-        {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlConnection conn = new SqlConnection(con))
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                object result = cmd.ExecuteScalar();
+                if(result!= null)
+                {
+                    return Convert.ToInt32(result);
+                }
+                
+            }
+            return  0;
+        }
 
+
+
+
+        // for isert, update, delete 
+        public static int ExecuteNonQuery(string query)
+        {
+            using (SqlConnection conn = new SqlConnection(con))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                return cmd.ExecuteNonQuery();
             }
         }
 
 
 
+
+        //for multiple rows
         public static SqlDataReader ExecuteReader(string query)
         {
-            SqlConnection conn = new SqlConnection(_connectionString);
+            SqlConnection conn = new SqlConnection(con);
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
             return cmd.ExecuteReader(CommandBehavior.CloseConnection);
         }
+
+
+
     }
 }

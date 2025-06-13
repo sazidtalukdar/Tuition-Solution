@@ -60,7 +60,7 @@ namespace Tuition_Solution
                     regester.Visible = true;
 
                     string code = otpTool.get_code();
-                    string sms = $"Your otp is {code}.  Do not share your opt with any one . Thank you";
+                    string sms = $"Your otp is {code}.  Do not share your otp with any one . Thank you";
                     otpTool.set_code(code);
                     otpTool.SendSms(phoneNumber,sms);
                 }

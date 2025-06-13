@@ -39,6 +39,7 @@
             radioButton1 = new RadioButton();
             label3 = new Label();
             pictureBox2 = new PictureBox();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -96,6 +97,7 @@
             button2.TabIndex = 5;
             button2.Text = "Login";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += login_bt_click;
             // 
             // linkLabel2
             // 
@@ -151,11 +153,21 @@
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(393, 11);
+            textBox1.Margin = new Padding(2);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(206, 34);
+            textBox1.TabIndex = 13;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(981, 520);
+            Controls.Add(textBox1);
             Controls.Add(pictureBox2);
             Controls.Add(label3);
             Controls.Add(radioButton1);
@@ -171,6 +183,7 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -188,5 +201,6 @@
         private RadioButton radioButton1;
         private Label label3;
         private PictureBox pictureBox2;
+        private TextBox textBox1;
     }
 }

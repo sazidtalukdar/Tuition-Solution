@@ -20,15 +20,12 @@ namespace Tuition_Solution
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
-            string cpu_id = log_res_handel.GetProcessorId();
-            this.cpu_id = cpu_id;
-
+            string cpu_id_l = log_res.GetProcessorId();
+            this.cpu_id = cpu_id_l;
 
         }
-        //string cpu_id = log_res_handel.GetProcessorId();
-        //    this.cpu_id = cpu_id;
 
         private void login_bt_click(object sender, EventArgs e)
 
@@ -39,7 +36,7 @@ namespace Tuition_Solution
             string query = $"SELECT COUNT(*) FROM users WHERE [username] = '{userbox.Text}' AND password = '{passbox.Text}'";
             SqlDataReader reader = databse.ExecuteReader(query1);
 
-            int count = databse.ExecuteQuery(query);
+            int count = databse.ExecuteScalar(query);
 
             if (count == 1)
             {
@@ -53,6 +50,7 @@ namespace Tuition_Solution
                     this.role = role;
                     this.status = status;
                     this.cpu_db_id = cpu;
+                   
 
                 }
 
@@ -75,7 +73,7 @@ namespace Tuition_Solution
                         MessageBox.Show("Login successful!");
                         if (role == "ADMIN")
                         {
-                            var s = new Forgot();
+                            var s = new registration();
                             s.Show();
                             this.Hide();
 
@@ -100,5 +98,7 @@ namespace Tuition_Solution
                 MessageBox.Show(" Wrong username or password.");
             }
         }
+
+        
     }
 }

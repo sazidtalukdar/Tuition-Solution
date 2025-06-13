@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
-using System.Management;
 
 namespace Tuition_Solution
 {
-    internal class log_res_handel
+    internal class log_res
     {
+
 
         public static string GetProcessorId()
         {
@@ -20,8 +21,17 @@ namespace Tuition_Solution
         }
 
 
-
-
+        public static string GetMotherboardId()
+        {
+            foreach (var obj in new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard").Get())
+            {
+                return obj["SerialNumber"]?.ToString();
+            }
+            return null;
+        }
     }
-}
 
+
+   
+
+}

@@ -68,6 +68,7 @@
             search.TabIndex = 3;
             search.Text = "Search";
             search.UseVisualStyleBackColor = true;
+            search.Click += search_Click;
             // 
             // regester
             // 
@@ -77,6 +78,7 @@
             regester.TabIndex = 4;
             regester.Text = "Register";
             regester.UseVisualStyleBackColor = true;
+            regester.Click += register_Click;
             // 
             // label1
             // 
