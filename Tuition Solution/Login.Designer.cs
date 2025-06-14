@@ -39,7 +39,9 @@
             pictureBox2 = new PictureBox();
             show_pass = new CheckBox();
             textBox1 = new TextBox();
+            login_panel = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            login_panel.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -47,7 +49,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(153, 136);
+            label1.Location = new Point(36, 80);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(101, 25);
@@ -59,7 +61,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Blue;
-            label2.Location = new Point(153, 216);
+            label2.Location = new Point(36, 160);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(97, 25);
@@ -68,8 +70,9 @@
             // 
             // userbox
             // 
+            userbox.BackColor = Color.WhiteSmoke;
             userbox.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userbox.Location = new Point(265, 133);
+            userbox.Location = new Point(148, 77);
             userbox.Margin = new Padding(2);
             userbox.Multiline = true;
             userbox.Name = "userbox";
@@ -81,7 +84,7 @@
             button2.BackColor = Color.Maroon;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(241, 318);
+            button2.Location = new Point(124, 262);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(122, 35);
@@ -94,7 +97,7 @@
             // 
             linkLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             linkLabel2.LinkColor = Color.Green;
-            linkLabel2.Location = new Point(230, 373);
+            linkLabel2.Location = new Point(113, 317);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(255, 52);
             linkLabel2.TabIndex = 7;
@@ -106,7 +109,7 @@
             // 
             linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = Color.FromArgb(192, 0, 0);
-            linkLabel1.Location = new Point(153, 275);
+            linkLabel1.Location = new Point(36, 219);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(255, 52);
             linkLabel1.TabIndex = 8;
@@ -119,7 +122,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(175, 77);
+            label3.Location = new Point(58, 21);
             label3.Name = "label3";
             label3.Size = new Size(188, 32);
             label3.TabIndex = 10;
@@ -138,7 +141,7 @@
             // 
             show_pass.AutoSize = true;
             show_pass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            show_pass.Location = new Point(324, 275);
+            show_pass.Location = new Point(207, 219);
             show_pass.Name = "show_pass";
             show_pass.Size = new Size(147, 25);
             show_pass.TabIndex = 13;
@@ -148,8 +151,9 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.WhiteSmoke;
             textBox1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(265, 207);
+            textBox1.Location = new Point(148, 151);
             textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
@@ -157,21 +161,31 @@
             textBox1.TabIndex = 14;
             textBox1.TextChanged += passbox_click;
             // 
+            // login_panel
+            // 
+            login_panel.BackColor = Color.White;
+            login_panel.Controls.Add(label3);
+            login_panel.Controls.Add(textBox1);
+            login_panel.Controls.Add(label1);
+            login_panel.Controls.Add(show_pass);
+            login_panel.Controls.Add(label2);
+            login_panel.Controls.Add(userbox);
+            login_panel.Controls.Add(button2);
+            login_panel.Controls.Add(linkLabel1);
+            login_panel.Controls.Add(linkLabel2);
+            login_panel.Location = new Point(97, 62);
+            login_panel.Name = "login_panel";
+            login_panel.Size = new Size(396, 402);
+            login_panel.TabIndex = 15;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(981, 520);
-            Controls.Add(textBox1);
-            Controls.Add(show_pass);
+            Controls.Add(login_panel);
             Controls.Add(pictureBox2);
-            Controls.Add(label3);
-            Controls.Add(linkLabel1);
-            Controls.Add(linkLabel2);
-            Controls.Add(button2);
-            Controls.Add(userbox);
-            Controls.Add(label2);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Login";
@@ -179,8 +193,9 @@
             Text = "Login";
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            login_panel.ResumeLayout(false);
+            login_panel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -195,5 +210,6 @@
         private PictureBox pictureBox2;
         private CheckBox show_pass;
         private TextBox textBox1;
+        private Panel login_panel;
     }
 }

@@ -107,6 +107,12 @@ namespace Tuition_Solution
                 databse.ExecuteNonQuery(query);
 
                 MessageBox.Show("Password updated successfully.");
+                fbox1.Text = "";
+                fbox2.Text = "";
+                fbox3.Text = "";
+                var login = new Login();
+                login.Show();
+                this.Hide();
 
             }
 
