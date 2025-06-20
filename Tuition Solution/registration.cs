@@ -41,10 +41,10 @@ namespace Tuition_Solution
                         string query = $"INSERT INTO users (phone_number, Name, username, password, gender, role, status, cpu_id,unique_id) " +
                                        $"VALUES ('{phonebox.Text}', '{nmaebox.Text}', '{usernamebox.Text}', '{passbox.Text}', " +
                                        $"'{gender_check()}', '{role_check()}', 'SUSPENDED', '{log_res.GetProcessorId()}','{id}')";
-                        string query1 = $"INSERT INTO student_profiles (unique_id) " +
-                                       $"VALUES ('{id}')";
-                        string query2 = $"INSERT INTO teacher_profiles (unique_id) " +
-                                       $"VALUES ('{id}')";
+                        string query1 = $"INSERT INTO student_profiles (unique_id,student_id) " +
+                                       $"VALUES ('{id}','{id}')";
+                        string query2 = $"INSERT INTO teacher_profiles (unique_id,teacher_id) " +
+                                       $"VALUES ('{id}','{id}')";
 
                         string final_query = "";
                         if (role_check() == "STUDENT")

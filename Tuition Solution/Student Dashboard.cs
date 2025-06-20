@@ -10,14 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tuition_Solution
 {
-    public partial class Student_Dashboard : Form 
+    public partial class Student_Dashboard : Form
     {
         private string name;
-        private string phone { get; set; }
-        private string unique_id { get; set; }
+        private string phone;
+        private string unique_id;
+        private string teacher_id;
         public Student_Dashboard(string name, string phone, string unique_id)
         {
             this.name = name;
@@ -25,14 +27,16 @@ namespace Tuition_Solution
             this.unique_id = unique_id;
             InitializeComponent();
         }
-       
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public Student_Dashboard()
         {
 
         }
 
+
         private void Student_Dashboard_Load(object sender, EventArgs e)
         {
+            full_name.Text = $"Welcome {name}";
+            selest_subject.Items.Add("OP2");
             load_data();
             phone_teacher.Visible = false;
             qualification_teacher.Visible = false;
@@ -41,13 +45,14 @@ namespace Tuition_Solution
             qualification_l.Visible = false;
             panel4.Visible = false;
 
- 
+
             string query = $@"
 SELECT 
     u.Name AS [Teacher Name],
     u.phone_number AS [Phone Number],
     tp.qualification AS Qualification,
-    tp.address AS Address
+    tp.address AS Address,
+    tp.teacher_id As [Teacher ID]
 FROM 
     users u
 JOIN 
@@ -57,7 +62,7 @@ JOIN
             //u.unique_id = '{unique_id}'
 
             SqlDataReader red = databse.ExecuteReader(query);
-            DataTable dt = new DataTable(); 
+            DataTable dt = new DataTable();
 
             dt.Load(red);
             dataGridView1.DataSource = dt;
@@ -82,16 +87,6 @@ JOIN
 
 
 
-        private void search_bt_Click(object sender, EventArgs e)
-        {
-            panel3.Visible = false;
-            dataGridView1.Width = 500;
-            dataGridView1.Height = 500;
-            panel1.Size = new Size(490, 490);
-
-
-
-        }
 
 
 
@@ -118,37 +113,12 @@ JOIN
                 phone_teacher.Text = row.Cells["Phone Number"].Value.ToString();
                 qualification_teacher.Text = row.Cells["Qualification"].Value.ToString();
                 address_teacher.Text = row.Cells["Address"].Value.ToString();
+                teacher_id = row.Cells["Teacher ID"].Value.ToString();
             }
         }
 
 
 
-        private void MakeButtonRound(Button button)
-        {
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(0, 0, button.Width, button.Height);
-            button.Region = new Region(path);
-        }
-
-
-        private void request_bt_Click(object sender, EventArgs e)
-        {
-            panel3.Visible = true;
-            dataGridView1.Width = 1000;
-            dataGridView1.Height = 500;
-            panel1.Size = new Size(990, 490);
-            panel4.Visible = false;
-            name_teacher.Visible = false;
-            phone_teacher.Visible = false;
-            qualification_teacher.Visible = false;
-            address_teacher.Visible = false;
-            name_l.Visible = false;
-            phone_l.Visible = false;
-            qualification_l.Visible = false;
-            adress_l.Visible = false;
-
-
-        }
 
 
         private void load_data()
@@ -166,6 +136,72 @@ JOIN
 
         }
 
+        private void load_subjext()
+        {
+            string query = "SELECT subject_name FROM subjects";
+            SqlDataReader red = databse.ExecuteReader(query);
+            while (red.Read())
+            {
+                selest_subject.Items.Add(red["subject_name"].ToString());
+            }
+        }
+
+
+
+        private void request_bt_Click(object sender, EventArgs e)
+        {
+            string date = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            string subject = selest_subject.SelectedItem.ToString();
+            string res_id = otp_and_code.get_otp();
+
+            string query = $@"INSERT INTO teacher_requests (request_id,student_id,teacher_id,subject,request_date,time,salary,status)
+            VALUES ('{res_id}', '{unique_id}','{teacher_id}','{subject}','{date}','{time_student.Text}','{salary_for_teacher.Text}','{"PENDING"}')";
+            int res = databse.ExecuteNonQuery(query);
+            string query1 = $"update student_profiles set request_id = ('{res_id}')  WHERE student_id = '{unique_id}'";
+            string query2 = $"update teacher_profiles set request_id = ('{res_id}')  WHERE teacher_id = '{teacher_id}'";
+            int res1 = databse.ExecuteNonQuery(query1);
+            int res2 = databse.ExecuteNonQuery(query2);
+            if (res > 0 && res1 > 0 && res2 > 0)
+            {
+                MessageBox.Show("Request sent successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Failed to send request. Please try again.");
+            }
+
+
+
+        }
+
+
+
+        private void search_bt_Click(object sender, EventArgs e)
+        {
+            string query = $@"
+SELECT 
+    u.Name AS [Teacher Name],
+    u.phone_number AS [Phone Number],
+    tp.qualification AS Qualification,
+    tp.address AS Address
+FROM 
+    users u
+JOIN 
+    teacher_profiles tp ON u.unique_id = tp.unique_id
+where tp.qualification = '{searchbox.Text}'
+";
+            SqlDataReader red = databse.ExecuteReader(query);
+
+            DataTable dt = new DataTable();
+            dt.Load(red);
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+
+        }
+
+
 
 
         private void update_bt_Click(object sender, EventArgs e)
@@ -176,7 +212,7 @@ JOIN
             string query1 = $"UPDATE users SET phone_number = '{phonebox_user.Text}', Name = '{namebox_user.Text}' WHERE unique_id = '{unique_id}'";
             int res = databse.ExecuteNonQuery(query1);
             int res1 = databse.ExecuteNonQuery(query);
-            if (res > 0 && res1 >0)
+            if (res > 0 && res1 > 0)
             {
                 MessageBox.Show("Profile updated successfully.");
             }
@@ -187,6 +223,74 @@ JOIN
         }
 
 
+
+        private void logout_bt_click(object sender, EventArgs e)
+        {
+            var login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+
+
+        private void allocatin_bt_click(object sender, EventArgs e)
+        {
+            string query = $@"SELECT
+    u.Name AS [Teacher Name],
+    al.subject as Subject,
+    u.phone_number AS [Phone Number],
+    tp.qualification AS Qualification,
+    tp.address AS Address,
+    al.request_id AS [Request ID]
+    
+FROM
+    users u
+        JOIN
+    teacher_profiles tp ON u.unique_id = tp.teacher_id
+        JOIN
+    allocations al ON tp.request_id = al.request_id
+where al.status = 'ACCEPT' and al.student_id= '{unique_id}'";
+            SqlDataReader red = databse.ExecuteReader(query);
+            DataTable dt = new DataTable();
+
+            var alo = new Allocation(red, dt, name);
+            alo.Show();
+
+        }
+
+
+
+        private void delete_account_Click(object sender, EventArgs e)
+        {
+
+            string query = $@"
+    delete from allocations where student_id = '{unique_id}';
+    delete from student_profiles where student_id = '{unique_id}';
+    delete from users where unique_id = '{unique_id}';
+";
+
+            int res = databse.ExecuteNonQuery(query);
+            if (res > 0)
+            {
+                MessageBox.Show("Account deleted successfully.");
+                var login = new Login();
+                login.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete account.");
+            }
+        }
+
+
+
+        private void change_pass_Click(object sender, EventArgs e)
+        {
+            var change_pass = new Change_Pass(unique_id,name);
+            change_pass.Show();
+
+        }
     }
 
 }
