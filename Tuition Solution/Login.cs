@@ -8,12 +8,13 @@ namespace Tuition_Solution
 {
     public partial class Login : Form
     {
-
+        private string name { get;set;}
         private string phone { get; set; }
         private string role { get; set; }
         private string status { get; set; }
         private string cpu_id { get; set; }
         private string cpu_db_id { get; set; }
+        private string unique_id { get; set; }
 
         public Login()
         {
@@ -33,7 +34,7 @@ namespace Tuition_Solution
         {
 
 
-            string query1 = $"SELECT phone_number, role, status,cpu_id FROM users WHERE [username] = '{userbox.Text}' AND password = '{textBox1.Text}'";
+            string query1 = $"SELECT * FROM users WHERE [username] = '{userbox.Text}' AND password = '{textBox1.Text}'";
             string query = $"SELECT COUNT(*) FROM users WHERE [username] = '{userbox.Text}' AND password = '{textBox1.Text}'";
             SqlDataReader reader = databse.ExecuteReader(query1);
 
@@ -51,14 +52,19 @@ namespace Tuition_Solution
                 {
                     if (reader.Read())
                     {
+                        string name = reader["Name"].ToString();
                         string phone = reader["phone_number"].ToString();
+                        string gender = reader["gender"].ToString() ;
                         string role = reader["role"].ToString();
                         string status = reader["status"].ToString();
                         string cpu = reader["cpu_id"].ToString();
+                        string qunique_id = reader["unique_id"].ToString();
+                        this.name=name;
                         this.phone = phone;
                         this.role = role;
                         this.status = status;
                         this.cpu_db_id = cpu;
+                        this.unique_id = qunique_id;
 
 
                     }
@@ -93,6 +99,9 @@ namespace Tuition_Solution
                             }
                             else if (role == "STUDENT")
                             {
+                                var s = new Student_Dashboard(name,phone,unique_id);
+                                s.Show();
+                                this.Hide();
 
                             }
                         }

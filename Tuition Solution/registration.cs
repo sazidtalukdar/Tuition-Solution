@@ -22,7 +22,7 @@ namespace Tuition_Solution
 
         private void singup_Click(object sender, EventArgs e)
         {
-            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" ||gender_check()=="" || gender_check()=="" )
+            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" ||gender_check()=="" || role_check()=="" )
             {
                 MessageBox.Show("Please fill in all fields.");
 
@@ -37,14 +37,33 @@ namespace Tuition_Solution
                     }
                     else
                     {
-                        string query = $"INSERT INTO users (phone_number, Name, username, password, gender, role, status, cpu_id) " +
+                        string id = otp_and_code.get_code();
+                        string query = $"INSERT INTO users (phone_number, Name, username, password, gender, role, status, cpu_id,unique_id) " +
                                        $"VALUES ('{phonebox.Text}', '{nmaebox.Text}', '{usernamebox.Text}', '{passbox.Text}', " +
-                                       $"'{gender_check()}', '{role_check()}', 'SUSPENDED', '{log_res.GetProcessorId()}')";
+                                       $"'{gender_check()}', '{role_check()}', 'SUSPENDED', '{log_res.GetProcessorId()}','{id}')";
+                        string query1 = $"INSERT INTO student_profiles (unique_id) " +
+                                       $"VALUES ('{id}')";
+                        string query2 = $"INSERT INTO teacher_profiles (unique_id) " +
+                                       $"VALUES ('{id}')";
+
+                        string final_query = "";
+                        if (role_check() == "STUDENT")
+                        {
+                            final_query = query1;
+                        }
+                        else if (role_check() == "TEACHER")
+                        {
+                            final_query = query2;
+                        }
+
+
 
                         int res = databse.ExecuteNonQuery(query);
+                        int res1 = databse.ExecuteNonQuery(final_query);
 
-                        if (res > 0)
+                        if (res > 0 && res1>0)
                         {
+                           
                             MessageBox.Show("Registration  Successfull");
                         }
                         else

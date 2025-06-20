@@ -32,6 +32,22 @@ namespace Tuition_Solution
     }
 
 
-   
+
+    public interface user_data
+    {
+        public string Nmae { get; set; }
+       public  string phone { get; set; }
+      public   string unique_id { get; set; }
+
+      public void SetUserData(string name, string phone, string uniqueId) { 
+            Nmae = name;
+            phone = phone;
+            unique_id = uniqueId;
+        }
+    }
+
+
+
+
 
 }

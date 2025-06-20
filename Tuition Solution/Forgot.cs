@@ -67,7 +67,7 @@ namespace Tuition_Solution
                     label4.Visible = true;
                     label5.Visible = true;
 
-                    string code = otpTool.get_code();
+                    string code = otp_and_code.get_otp();
                     string sms = $"Your otp is {code}.  Do not share your otp with any one . Thank you";
                     otpTool.set_code(code);
                     otpTool.SendSms(phoneNumber, sms);

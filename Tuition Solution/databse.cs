@@ -50,8 +50,9 @@ namespace Tuition_Solution
             conn.Open();
             return cmd.ExecuteReader(CommandBehavior.CloseConnection);
         }
+         
 
-
+        
 
     }
 }

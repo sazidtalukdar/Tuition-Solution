@@ -14,12 +14,31 @@ namespace Tuition_Solution
     {
         private string otp;
 
-        public  string get_code()
+        public static  string get_code()
+        { 
+            var random = new Random();
+            int code = random.Next(100000, 999999);
+        string query = $"select count(*) from users where [unique_id] = '{code}'";
+            int count = databse.ExecuteScalar(query);
+            if (count > 0)
+            {
+              
+                return get_code();
+            }
+            else { 
+                return $"{code}";
+        }
+    }
+
+
+        public static string get_otp()
         {
             var random = new Random();
-            int code = random.Next(100000, 999999); 
+            int code = random.Next(100000, 999999);
             return $"{code}";
         }
+
+
 
         public void SendSms(string number, string sms)
         {
