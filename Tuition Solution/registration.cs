@@ -22,9 +22,9 @@ namespace Tuition_Solution
 
         private void singup_Click(object sender, EventArgs e)
         {
-            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" ||gender_check()=="" || role_check()=="" )
+            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" ||gender_check()=="" || role_check()=="" || !log_res.check_phone(phonebox.Text) )
             {
-                MessageBox.Show("Please fill in all fields.");
+                MessageBox.Show("Please fill in all fields aand check the phone number .");
 
             }
             else

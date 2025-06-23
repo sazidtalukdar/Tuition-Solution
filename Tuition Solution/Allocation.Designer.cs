@@ -41,18 +41,18 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(36, 112);
+            panel1.Location = new Point(36, 157);
             panel1.Name = "panel1";
-            panel1.Size = new Size(541, 220);
+            panel1.Size = new Size(615, 218);
             panel1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonFace;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(18, 21);
+            dataGridView1.Location = new Point(21, 19);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(507, 180);
+            dataGridView1.Size = new Size(575, 180);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -60,7 +60,7 @@
             // 
             Back.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Back.ForeColor = Color.Blue;
-            Back.Location = new Point(463, 66);
+            Back.Location = new Point(535, 90);
             Back.Name = "Back";
             Back.Size = new Size(116, 35);
             Back.TabIndex = 3;
@@ -74,16 +74,15 @@
             namebox.ForeColor = Color.FromArgb(255, 128, 128);
             namebox.Location = new Point(36, 29);
             namebox.Name = "namebox";
-            namebox.Size = new Size(404, 60);
+            namebox.Size = new Size(404, 83);
             namebox.TabIndex = 4;
             namebox.Text = "label1";
-            namebox.Click += namebox_Click;
             // 
             // delete
             // 
             delete.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             delete.ForeColor = Color.Red;
-            delete.Location = new Point(463, 25);
+            delete.Location = new Point(535, 49);
             delete.Name = "delete";
             delete.Size = new Size(116, 35);
             delete.TabIndex = 5;
@@ -95,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(618, 369);
+            ClientSize = new Size(685, 406);
             Controls.Add(delete);
             Controls.Add(namebox);
             Controls.Add(Back);

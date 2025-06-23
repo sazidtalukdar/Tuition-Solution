@@ -78,6 +78,8 @@ namespace Tuition_Solution
                     if (cpu_id != cpu_db_id)
                     {
                         MessageBox.Show("This computer is not registered for your account. Please contact the admin.");
+                        userbox.Clear();
+                        textBox1.Clear();
                         return;
                     }
                     else
@@ -95,7 +97,9 @@ namespace Tuition_Solution
                             }
                             else if (role == "TEACHER")
                             {
-
+                                var t = new Teacher_Dashboard(name, phone, unique_id);
+                                t.Show();
+                                this.Hide();
                             }
                             else if (role == "STUDENT")
                             {
@@ -108,6 +112,8 @@ namespace Tuition_Solution
                         else
                         {
                             MessageBox.Show("Your account is not active. Please contact the admin.");
+                            userbox.Clear();
+                            textBox1.Clear();
                         }
                     }
                 }
@@ -115,6 +121,8 @@ namespace Tuition_Solution
                 else
                 {
                     MessageBox.Show(" Wrong username or password.");
+                    userbox.Clear();
+                    textBox1.Clear();
                 }
             }
         }

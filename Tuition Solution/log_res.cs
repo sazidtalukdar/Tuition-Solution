@@ -29,25 +29,21 @@ namespace Tuition_Solution
             }
             return null;
         }
-    }
 
 
 
-    public interface user_data
-    {
-        public string Nmae { get; set; }
-       public  string phone { get; set; }
-      public   string unique_id { get; set; }
-
-      public void SetUserData(string name, string phone, string uniqueId) { 
-            Nmae = name;
-            phone = phone;
-            unique_id = uniqueId;
+        public static bool check_phone(string phone)
+        {
+            int number;
+            if (int.TryParse(phone,out number) && phone.Length == 11 && phone.StartsWith("01")) {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
+
+       
     }
 
-
-
-
-
-}
+   }

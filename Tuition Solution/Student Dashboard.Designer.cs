@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel3 = new Panel();
@@ -48,79 +48,76 @@
             addressbox_user = new RichTextBox();
             emailbox_user = new RichTextBox();
             phonebox_user = new RichTextBox();
-            full_name = new Label();
-            qualification_l = new Label();
-            phone_l = new Label();
+            bindingSource1 = new BindingSource(components);
+            panel2 = new Panel();
             time_student = new RichTextBox();
             salary_for_teacher = new RichTextBox();
-            label1 = new Label();
-            salary = new Label();
-            selest_subject = new ComboBox();
-            request_bt = new Button();
-            searchbox = new RichTextBox();
-            bindingSource1 = new BindingSource(components);
-            dateTimePicker = new DateTimePicker();
-            phone_teacher = new RichTextBox();
-            qualification_teacher = new RichTextBox();
-            address_teacher = new RichTextBox();
-            adress_l = new Label();
-            panel4 = new Panel();
             name_teacher = new RichTextBox();
+            dateTimePicker = new DateTimePicker();
             name_l = new Label();
-            panel2 = new Panel();
+            label1 = new Label();
+            address_teacher = new RichTextBox();
+            searchbox = new RichTextBox();
+            qualification_teacher = new RichTextBox();
+            request_bt = new Button();
+            adress_l = new Label();
+            salary = new Label();
+            phone_teacher = new RichTextBox();
+            selest_subject = new ComboBox();
+            qualification_l = new Label();
+            phone_l = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
-            panel4.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(284, 227);
+            panel1.Location = new Point(284, 251);
             panel1.Name = "panel1";
-            panel1.Size = new Size(841, 291);
+            panel1.Size = new Size(841, 267);
             panel1.TabIndex = 0;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView1.Size = new Size(835, 285);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.Size = new Size(835, 261);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(47, 225, 237);
+            panel3.BackColor = Color.FromArgb(44, 62, 80);
             panel3.Controls.Add(allocation);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label4);
@@ -134,20 +131,20 @@
             panel3.Controls.Add(addressbox_user);
             panel3.Controls.Add(emailbox_user);
             panel3.Controls.Add(phonebox_user);
-            panel3.Location = new Point(1, 60);
+            panel3.Location = new Point(1, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(251, 458);
+            panel3.Size = new Size(251, 514);
             panel3.TabIndex = 2;
             // 
             // allocation
             // 
-            allocation.BackColor = Color.FromArgb(47, 225, 237);
+            allocation.BackColor = Color.FromArgb(236, 240, 241);
             allocation.FlatAppearance.BorderSize = 0;
             allocation.FlatAppearance.MouseDownBackColor = Color.Transparent;
             allocation.FlatAppearance.MouseOverBackColor = Color.Transparent;
             allocation.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             allocation.ForeColor = Color.Blue;
-            allocation.Location = new Point(0, 380);
+            allocation.Location = new Point(0, 337);
             allocation.Name = "allocation";
             allocation.Size = new Size(251, 47);
             allocation.TabIndex = 24;
@@ -158,7 +155,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(64, 0, 0);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(50, 211);
             label5.Name = "label5";
             label5.Size = new Size(137, 23);
@@ -168,7 +165,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(64, 0, 0);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(50, 148);
             label4.Name = "label4";
             label4.Size = new Size(137, 23);
@@ -178,7 +175,7 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(64, 0, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(50, 88);
             label3.Name = "label3";
             label3.Size = new Size(137, 23);
@@ -188,7 +185,7 @@
             // label2
             // 
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(64, 0, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(50, 21);
             label2.Name = "label2";
             label2.Size = new Size(137, 23);
@@ -197,7 +194,7 @@
             // 
             // namebox_user
             // 
-            namebox_user.BackColor = Color.FromArgb(47, 225, 237);
+            namebox_user.BackColor = Color.FromArgb(236, 240, 241);
             namebox_user.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             namebox_user.Location = new Point(15, 49);
             namebox_user.Name = "namebox_user";
@@ -207,7 +204,7 @@
             // 
             // update
             // 
-            update.BackColor = Color.FromArgb(47, 225, 237);
+            update.BackColor = Color.FromArgb(236, 240, 241);
             update.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             update.ForeColor = Color.Blue;
             update.Location = new Point(0, 296);
@@ -232,10 +229,10 @@
             // 
             // logout
             // 
-            logout.BackColor = Color.FromArgb(47, 225, 237);
+            logout.BackColor = Color.FromArgb(236, 240, 241);
             logout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logout.ForeColor = Color.Red;
-            logout.Location = new Point(0, 338);
+            logout.Location = new Point(0, 379);
             logout.Name = "logout";
             logout.Size = new Size(251, 45);
             logout.TabIndex = 14;
@@ -251,10 +248,11 @@
             change_pass.TabIndex = 15;
             change_pass.TabStop = true;
             change_pass.Text = "Change Password";
+            change_pass.Click += change_pass_Click;
             // 
             // addressbox_user
             // 
-            addressbox_user.BackColor = Color.FromArgb(47, 225, 237);
+            addressbox_user.BackColor = Color.FromArgb(236, 240, 241);
             addressbox_user.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             addressbox_user.Location = new Point(15, 240);
             addressbox_user.Name = "addressbox_user";
@@ -264,7 +262,7 @@
             // 
             // emailbox_user
             // 
-            emailbox_user.BackColor = Color.FromArgb(47, 225, 237);
+            emailbox_user.BackColor = Color.FromArgb(236, 240, 241);
             emailbox_user.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             emailbox_user.Location = new Point(15, 175);
             emailbox_user.Name = "emailbox_user";
@@ -274,7 +272,7 @@
             // 
             // phonebox_user
             // 
-            phonebox_user.BackColor = Color.FromArgb(47, 225, 237);
+            phonebox_user.BackColor = Color.FromArgb(236, 240, 241);
             phonebox_user.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             phonebox_user.Location = new Point(15, 110);
             phonebox_user.Name = "phonebox_user";
@@ -282,202 +280,184 @@
             phonebox_user.TabIndex = 11;
             phonebox_user.Text = "";
             // 
-            // full_name
+            // panel2
             // 
-            full_name.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            full_name.ForeColor = Color.Red;
-            full_name.Location = new Point(9, 9);
-            full_name.Name = "full_name";
-            full_name.Size = new Size(258, 23);
-            full_name.TabIndex = 11;
-            full_name.Text = "None";
-            // 
-            // qualification_l
-            // 
-            qualification_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            qualification_l.ForeColor = Color.White;
-            qualification_l.Location = new Point(26, 91);
-            qualification_l.Name = "qualification_l";
-            qualification_l.Size = new Size(87, 23);
-            qualification_l.TabIndex = 18;
-            qualification_l.Text = "Qualification";
-            qualification_l.Click += qualification_l_Click;
-            // 
-            // phone_l
-            // 
-            phone_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            phone_l.ForeColor = Color.White;
-            phone_l.Location = new Point(26, 30);
-            phone_l.Name = "phone_l";
-            phone_l.Size = new Size(69, 23);
-            phone_l.TabIndex = 17;
-            phone_l.Text = "Phone";
-            phone_l.Click += phone_l_Click;
+            panel2.BackColor = Color.FromArgb(74, 144, 226);
+            panel2.Controls.Add(time_student);
+            panel2.Controls.Add(salary_for_teacher);
+            panel2.Controls.Add(name_teacher);
+            panel2.Controls.Add(dateTimePicker);
+            panel2.Controls.Add(name_l);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(address_teacher);
+            panel2.Controls.Add(searchbox);
+            panel2.Controls.Add(qualification_teacher);
+            panel2.Controls.Add(request_bt);
+            panel2.Controls.Add(adress_l);
+            panel2.Controls.Add(salary);
+            panel2.Controls.Add(phone_teacher);
+            panel2.Controls.Add(selest_subject);
+            panel2.Controls.Add(qualification_l);
+            panel2.Controls.Add(phone_l);
+            panel2.Location = new Point(288, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(835, 203);
+            panel2.TabIndex = 16;
             // 
             // time_student
             // 
-            time_student.Location = new Point(87, 17);
+            time_student.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            time_student.Location = new Point(406, 25);
             time_student.Name = "time_student";
             time_student.Size = new Size(167, 32);
-            time_student.TabIndex = 3;
+            time_student.TabIndex = 16;
             time_student.Text = "";
             // 
             // salary_for_teacher
             // 
-            salary_for_teacher.Location = new Point(339, 17);
+            salary_for_teacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            salary_for_teacher.Location = new Point(658, 25);
             salary_for_teacher.Name = "salary_for_teacher";
             salary_for_teacher.Size = new Size(167, 32);
-            salary_for_teacher.TabIndex = 4;
+            salary_for_teacher.TabIndex = 17;
             salary_for_teacher.Text = "";
+            // 
+            // name_teacher
+            // 
+            name_teacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            name_teacher.Location = new Point(77, 6);
+            name_teacher.Name = "name_teacher";
+            name_teacher.Size = new Size(222, 32);
+            name_teacher.TabIndex = 29;
+            name_teacher.Text = "";
+            // 
+            // dateTimePicker
+            // 
+            dateTimePicker.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker.Location = new Point(332, 107);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new Size(200, 29);
+            dateTimePicker.TabIndex = 23;
+            // 
+            // name_l
+            // 
+            name_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            name_l.ForeColor = Color.White;
+            name_l.Location = new Point(12, 11);
+            name_l.Name = "name_l";
+            name_l.Size = new Size(87, 23);
+            name_l.TabIndex = 28;
+            name_l.Text = "Name";
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(34, 21);
+            label1.Location = new Point(353, 29);
             label1.Name = "label1";
             label1.Size = new Size(87, 23);
-            label1.TabIndex = 5;
+            label1.TabIndex = 18;
             label1.Text = "Time Duration";
             // 
-            // salary
+            // address_teacher
             // 
-            salary.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            salary.ForeColor = Color.Black;
-            salary.Location = new Point(285, 21);
-            salary.Name = "salary";
-            salary.Size = new Size(87, 23);
-            salary.TabIndex = 6;
-            salary.Text = "Salary";
+            address_teacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            address_teacher.Location = new Point(87, 159);
+            address_teacher.Name = "address_teacher";
+            address_teacher.Size = new Size(222, 32);
+            address_teacher.TabIndex = 24;
+            address_teacher.Text = "";
             // 
-            // selest_subject
+            // searchbox
             // 
-            selest_subject.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selest_subject.FormattingEnabled = true;
-            selest_subject.Location = new Point(34, 60);
-            selest_subject.Name = "selest_subject";
-            selest_subject.Size = new Size(96, 29);
-            selest_subject.TabIndex = 7;
-            selest_subject.Tag = "";
-            selest_subject.Text = "Subjects";
+            searchbox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchbox.Location = new Point(658, 102);
+            searchbox.Name = "searchbox";
+            searchbox.Size = new Size(167, 32);
+            searchbox.TabIndex = 22;
+            searchbox.Text = "";
+            // 
+            // qualification_teacher
+            // 
+            qualification_teacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            qualification_teacher.Location = new Point(27, 121);
+            qualification_teacher.Name = "qualification_teacher";
+            qualification_teacher.Size = new Size(203, 32);
+            qualification_teacher.TabIndex = 23;
+            qualification_teacher.Text = "";
             // 
             // request_bt
             // 
             request_bt.BackColor = Color.Blue;
             request_bt.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             request_bt.ForeColor = Color.White;
-            request_bt.Location = new Point(339, 145);
+            request_bt.Location = new Point(658, 153);
             request_bt.Name = "request_bt";
             request_bt.Size = new Size(102, 37);
-            request_bt.TabIndex = 8;
+            request_bt.TabIndex = 21;
             request_bt.Text = "Request";
             request_bt.UseVisualStyleBackColor = false;
             request_bt.Click += request_bt_Click;
-            // 
-            // searchbox
-            // 
-            searchbox.Location = new Point(339, 94);
-            searchbox.Name = "searchbox";
-            searchbox.Size = new Size(167, 32);
-            searchbox.TabIndex = 9;
-            searchbox.Text = "";
-            searchbox.TextChanged += search_bt_Click;
-            // 
-            // dateTimePicker
-            // 
-            dateTimePicker.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker.Location = new Point(13, 99);
-            dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new Size(200, 29);
-            dateTimePicker.TabIndex = 10;
-            // 
-            // phone_teacher
-            // 
-            phone_teacher.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            phone_teacher.Location = new Point(53, 56);
-            phone_teacher.Name = "phone_teacher";
-            phone_teacher.Size = new Size(203, 32);
-            phone_teacher.TabIndex = 13;
-            phone_teacher.Text = "";
-            // 
-            // qualification_teacher
-            // 
-            qualification_teacher.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            qualification_teacher.Location = new Point(26, 117);
-            qualification_teacher.Name = "qualification_teacher";
-            qualification_teacher.Size = new Size(203, 32);
-            qualification_teacher.TabIndex = 14;
-            qualification_teacher.Text = "";
-            // 
-            // address_teacher
-            // 
-            address_teacher.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            address_teacher.Location = new Point(86, 155);
-            address_teacher.Name = "address_teacher";
-            address_teacher.Size = new Size(222, 32);
-            address_teacher.TabIndex = 15;
-            address_teacher.Text = "";
             // 
             // adress_l
             // 
             adress_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             adress_l.ForeColor = Color.White;
-            adress_l.Location = new Point(26, 156);
+            adress_l.Location = new Point(27, 160);
             adress_l.Name = "adress_l";
             adress_l.Size = new Size(87, 23);
-            adress_l.TabIndex = 16;
+            adress_l.TabIndex = 25;
             adress_l.Text = "Address";
             // 
-            // panel4
+            // salary
             // 
-            panel4.BackColor = Color.FromArgb(7, 18, 230);
-            panel4.Controls.Add(name_teacher);
-            panel4.Controls.Add(name_l);
-            panel4.Controls.Add(address_teacher);
-            panel4.Controls.Add(qualification_teacher);
-            panel4.Controls.Add(adress_l);
-            panel4.Controls.Add(phone_teacher);
-            panel4.Controls.Add(qualification_l);
-            panel4.Controls.Add(phone_l);
-            panel4.Location = new Point(273, 18);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(322, 192);
-            panel4.TabIndex = 19;
+            salary.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            salary.ForeColor = Color.Black;
+            salary.Location = new Point(604, 29);
+            salary.Name = "salary";
+            salary.Size = new Size(87, 23);
+            salary.TabIndex = 19;
+            salary.Text = "Salary";
             // 
-            // name_teacher
+            // phone_teacher
             // 
-            name_teacher.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            name_teacher.Location = new Point(76, 0);
-            name_teacher.Name = "name_teacher";
-            name_teacher.Size = new Size(222, 32);
-            name_teacher.TabIndex = 21;
-            name_teacher.Text = "";
+            phone_teacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            phone_teacher.Location = new Point(54, 60);
+            phone_teacher.Name = "phone_teacher";
+            phone_teacher.Size = new Size(203, 32);
+            phone_teacher.TabIndex = 22;
+            phone_teacher.Text = "";
             // 
-            // name_l
+            // selest_subject
             // 
-            name_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            name_l.ForeColor = Color.White;
-            name_l.Location = new Point(11, 7);
-            name_l.Name = "name_l";
-            name_l.Size = new Size(87, 23);
-            name_l.TabIndex = 20;
-            name_l.Text = "Name";
+            selest_subject.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            selest_subject.FormattingEnabled = true;
+            selest_subject.Location = new Point(353, 68);
+            selest_subject.Name = "selest_subject";
+            selest_subject.Size = new Size(96, 29);
+            selest_subject.TabIndex = 20;
+            selest_subject.Tag = "";
+            selest_subject.Text = "Subjects";
             // 
-            // panel2
+            // qualification_l
             // 
-            panel2.BackColor = Color.FromArgb(6, 140, 30);
-            panel2.Controls.Add(time_student);
-            panel2.Controls.Add(salary_for_teacher);
-            panel2.Controls.Add(dateTimePicker);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(searchbox);
-            panel2.Controls.Add(request_bt);
-            panel2.Controls.Add(salary);
-            panel2.Controls.Add(selest_subject);
-            panel2.Location = new Point(601, 18);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(521, 192);
-            panel2.TabIndex = 20;
+            qualification_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            qualification_l.ForeColor = Color.White;
+            qualification_l.Location = new Point(27, 95);
+            qualification_l.Name = "qualification_l";
+            qualification_l.Size = new Size(87, 23);
+            qualification_l.TabIndex = 27;
+            qualification_l.Text = "Qualification";
+            // 
+            // phone_l
+            // 
+            phone_l.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            phone_l.ForeColor = Color.White;
+            phone_l.Location = new Point(27, 34);
+            phone_l.Name = "phone_l";
+            phone_l.Size = new Size(69, 23);
+            phone_l.TabIndex = 26;
+            phone_l.Text = "Phone";
             // 
             // Student_Dashboard
             // 
@@ -486,10 +466,8 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1127, 521);
             Controls.Add(panel2);
-            Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Controls.Add(full_name);
             Name = "Student_Dashboard";
             Text = "Student_Dashboard";
             Load += Student_Dashboard_Load;
@@ -497,7 +475,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
-            panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -506,16 +483,8 @@
 
         private Panel panel1;
         private Panel panel3;
-        private RichTextBox time_student;
-        private RichTextBox salary_for_teacher;
-        private Label label1;
         private RichTextBox phonebox_user;
-        private Label salary;
-        private ComboBox selest_subject;
-        private Button request_bt;
-        private RichTextBox searchbox;
         private BindingSource bindingSource1;
-        private DateTimePicker dateTimePicker;
         private RichTextBox addressbox_user;
         private RichTextBox emailbox_user;
         private LinkLabel delete_account;
@@ -523,22 +492,28 @@
         private Button logout;
         private Button update;
         private DataGridView dataGridView1;
-        private Label full_name;
-        private RichTextBox phone_teacher;
-        private Label qualification_l;
-        private Label phone_l;
-        private RichTextBox qualification_teacher;
-        private RichTextBox address_teacher;
-        private Label adress_l;
         private RichTextBox namebox_user;
-        private Panel panel4;
-        private Panel panel2;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Button allocation;
+        private Panel panel2;
+        private RichTextBox time_student;
+        private RichTextBox salary_for_teacher;
         private RichTextBox name_teacher;
+        private DateTimePicker dateTimePicker;
         private Label name_l;
+        private Label label1;
+        private RichTextBox address_teacher;
+        private RichTextBox searchbox;
+        private RichTextBox qualification_teacher;
+        private Button request_bt;
+        private Label adress_l;
+        private Label salary;
+        private RichTextBox phone_teacher;
+        private ComboBox selest_subject;
+        private Label qualification_l;
+        private Label phone_l;
     }
 }

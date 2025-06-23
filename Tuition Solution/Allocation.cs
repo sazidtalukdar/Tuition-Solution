@@ -67,11 +67,6 @@ namespace Tuition_Solution
                 request_id = row.Cells["Request ID"].Value.ToString();
             }
         }
-
-        private void namebox_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

@@ -35,7 +35,7 @@ namespace Tuition_Solution
 
         private void Student_Dashboard_Load(object sender, EventArgs e)
         {
-            full_name.Text = $"Welcome {name}";
+          
             selest_subject.Items.Add("OP2");
             load_data();
             phone_teacher.Visible = false;
@@ -43,7 +43,7 @@ namespace Tuition_Solution
             address_teacher.Visible = false;
             phone_l.Visible = false;
             qualification_l.Visible = false;
-            panel4.Visible = false;
+           
 
 
             string query = $@"
@@ -57,6 +57,7 @@ FROM
     users u
 JOIN 
     teacher_profiles tp ON u.unique_id = tp.unique_id
+where u.status = 'ACTIVE' and u.role = 'TEACHER'
 ";
             //WHERE 
             //u.unique_id = '{unique_id}'
@@ -93,7 +94,7 @@ JOIN
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            panel4.Visible = true;
+        
             name_teacher.Visible = true;
             phone_teacher.Visible = true;
             qualification_teacher.Visible = true;
@@ -150,6 +151,11 @@ JOIN
 
         private void request_bt_Click(object sender, EventArgs e)
         {
+            if (namebox_user.Text == "" || phonebox_user.Text == "" || emailbox_user.Text == "" || addressbox_user.Text == "" || selest_subject.SelectedItem == null || time_student.Text == "" || salary_for_teacher.Text == "")
+            {
+                MessageBox.Show("Please fill all fields.");
+                return;
+            }
             string date = dateTimePicker.Value.ToString("yyyy-MM-dd");
             string subject = selest_subject.SelectedItem.ToString();
             string res_id = otp_and_code.get_otp();
@@ -157,11 +163,11 @@ JOIN
             string query = $@"INSERT INTO teacher_requests (request_id,student_id,teacher_id,subject,request_date,time,salary,status)
             VALUES ('{res_id}', '{unique_id}','{teacher_id}','{subject}','{date}','{time_student.Text}','{salary_for_teacher.Text}','{"PENDING"}')";
             int res = databse.ExecuteNonQuery(query);
-            string query1 = $"update student_profiles set request_id = ('{res_id}')  WHERE student_id = '{unique_id}'";
-            string query2 = $"update teacher_profiles set request_id = ('{res_id}')  WHERE teacher_id = '{teacher_id}'";
-            int res1 = databse.ExecuteNonQuery(query1);
-            int res2 = databse.ExecuteNonQuery(query2);
-            if (res > 0 && res1 > 0 && res2 > 0)
+            //string query1 = $"update student_profiles set request_id = ('{res_id}')  WHERE student_id = '{unique_id}'";
+            //string query2 = $"update teacher_profiles set request_id = ('{res_id}')  WHERE teacher_id = '{teacher_id}'";
+            //int res1 = databse.ExecuteNonQuery(query1);
+            //int res2 = databse.ExecuteNonQuery(query2);
+            if (res > 0) //&& res1 > 0 && res2 > 0
             {
                 MessageBox.Show("Request sent successfully.");
             }
@@ -237,19 +243,22 @@ where tp.qualification = '{searchbox.Text}'
         {
             string query = $@"SELECT
     u.Name AS [Teacher Name],
+    u.role As [Role],
     al.subject as Subject,
     u.phone_number AS [Phone Number],
+    al.time AS [Time],
+    al.salary AS [Salary],
     tp.qualification AS Qualification,
     tp.address AS Address,
-    al.request_id AS [Request ID]
+    al.allocation_id AS [Allocation ID]
     
 FROM
     users u
         JOIN
     teacher_profiles tp ON u.unique_id = tp.teacher_id
         JOIN
-    allocations al ON tp.request_id = al.request_id
-where al.status = 'ACCEPT' and al.student_id= '{unique_id}'";
+    allocations al ON tp.teacher_id = al.teacher_id
+where al.status = 'ACTIVE' and al.student_id= '{unique_id}'";
             SqlDataReader red = databse.ExecuteReader(query);
             DataTable dt = new DataTable();
 
@@ -287,10 +296,15 @@ where al.status = 'ACCEPT' and al.student_id= '{unique_id}'";
 
         private void change_pass_Click(object sender, EventArgs e)
         {
-            var change_pass = new Change_Pass(unique_id,name);
+            var change_pass = new Change_Pass(unique_id, name);
             change_pass.Show();
 
         }
+
+
+
+
+        
     }
 
 }
