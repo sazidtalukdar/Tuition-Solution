@@ -97,7 +97,7 @@ namespace Tuition_Solution
                             }
                             else if (role == "TEACHER")
                             {
-                                var t = new Teacher_Dashboard(name, phone, unique_id);
+                                var t = new  teacher_desh(name, phone, unique_id);
                                 t.Show();
                                 this.Hide();
                             }

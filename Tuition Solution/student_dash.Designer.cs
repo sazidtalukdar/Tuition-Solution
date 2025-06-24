@@ -61,8 +61,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -92,10 +90,8 @@
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             delete_account = new LinkLabel();
             change_pass = new LinkLabel();
-            qualification_teacher = new Guna.UI2.WinForms.Guna2TextBox();
             selest_subject = new ComboBox();
             dateTimePicker = new DateTimePicker();
-            picture_qualification = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -109,7 +105,6 @@
             guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picture_qualification).BeginInit();
             SuspendLayout();
             // 
             // pictureBox8
@@ -564,27 +559,6 @@
             change_pass.Text = "Change Password";
             change_pass.Click += change_pass_Click;
             // 
-            // qualification_teacher
-            // 
-            qualification_teacher.BackColor = Color.FromArgb(60, 63, 81);
-            qualification_teacher.CustomizableEdges = customizableEdges33;
-            qualification_teacher.DefaultText = "";
-            qualification_teacher.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            qualification_teacher.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            qualification_teacher.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            qualification_teacher.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            qualification_teacher.FillColor = Color.FromArgb(40, 42, 52);
-            qualification_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            qualification_teacher.Font = new Font("Segoe UI", 9F);
-            qualification_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            qualification_teacher.Location = new Point(541, 140);
-            qualification_teacher.Name = "qualification_teacher";
-            qualification_teacher.PlaceholderText = "";
-            qualification_teacher.SelectedText = "";
-            qualification_teacher.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            qualification_teacher.Size = new Size(189, 36);
-            qualification_teacher.TabIndex = 39;
-            // 
             // selest_subject
             // 
             selest_subject.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -604,26 +578,14 @@
             dateTimePicker.Size = new Size(200, 29);
             dateTimePicker.TabIndex = 41;
             // 
-            // picture_qualification
-            // 
-            picture_qualification.Image = (Image)resources.GetObject("picture_qualification.Image");
-            picture_qualification.Location = new Point(499, 141);
-            picture_qualification.Name = "picture_qualification";
-            picture_qualification.Size = new Size(36, 31);
-            picture_qualification.SizeMode = PictureBoxSizeMode.Zoom;
-            picture_qualification.TabIndex = 42;
-            picture_qualification.TabStop = false;
-            // 
             // student_dash
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
-            Controls.Add(picture_qualification);
             Controls.Add(dateTimePicker);
             Controls.Add(selest_subject);
-            Controls.Add(qualification_teacher);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
             Controls.Add(pictureBox6);
@@ -656,7 +618,6 @@
             guna2GradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picture_qualification).EndInit();
             ResumeLayout(false);
         }
 
@@ -688,12 +649,10 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2TextBox qualification_teacher;
         private ComboBox selest_subject;
         private DateTimePicker dateTimePicker;
         private Guna.UI2.WinForms.Guna2TextBox addressbox_user;
         private LinkLabel delete_account;
         private LinkLabel change_pass;
-        private PictureBox picture_qualification;
     }
 }

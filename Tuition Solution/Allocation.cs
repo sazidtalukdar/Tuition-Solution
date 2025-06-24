@@ -16,7 +16,7 @@ namespace Tuition_Solution
         private SqlDataReader red;
         private DataTable dt;
         private string name;
-        private string request_id;
+        private string allocation_id;
         public Allocation(SqlDataReader red, DataTable dt, string name)
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace Tuition_Solution
 
         private void delete_Click(object sender, EventArgs e)
         {
-            string query = $"DELETE FROM allocations WHERE [request_id] = '{request_id}'";
+            string query = $"DELETE FROM allocations WHERE [allocation_id] = '{allocation_id}'";
             int result = databse.ExecuteNonQuery(query);
             if (result > 0)
             {
@@ -64,7 +64,7 @@ namespace Tuition_Solution
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                request_id = row.Cells["Request ID"].Value.ToString();
+                allocation_id = row.Cells["allocation_id"].Value.ToString();
             }
         }
     }

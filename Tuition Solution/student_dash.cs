@@ -19,7 +19,6 @@ namespace Tuition_Solution
         private string phone;
         private string unique_id;
         private string teacher_id;
-        private int count = 0;
         public student_dash(string name, string phone, string unique_id)
         {
             this.name = name;
@@ -36,6 +35,9 @@ namespace Tuition_Solution
 
 
 
+
+
+
         private void pic_show_Click(object sender, EventArgs e)
         {
             pic_show.Visible = false;
@@ -44,7 +46,7 @@ namespace Tuition_Solution
             guna2GradientPanel1.Width = 259;
             picture_name.Visible = false;
             picture_phone.Visible = false;
-            picture_qualification.Visible = false;
+
             picture_address.Visible = false;
             phone_teacher.Visible = false;
             //qualification_teacher.Visible = false;
@@ -63,14 +65,12 @@ namespace Tuition_Solution
            
                 picture_name.Visible = true;
                 picture_phone.Visible = true;
-                picture_qualification.Visible = true;
                 picture_address.Visible = true;
 
                 phone_teacher.Visible = true;
-                qualification_teacher.Visible = true;
                 address_teacher.Visible = true;
                 name_teacher.Visible = true;
-                ++count;
+
             
         }
 
@@ -80,13 +80,11 @@ namespace Tuition_Solution
             load_data();
             name_teacher.Visible = false;
             phone_teacher.Visible = false;
-            qualification_teacher.Visible = false;
             address_teacher.Visible = false;
             pic_hide.Visible = false;
             guna2GradientPanel1.Width = 55;
             picture_name.Visible=false;
             picture_phone.Visible = false;
-            picture_qualification.Visible = false;
             picture_address.Visible = false;
 
 
@@ -148,11 +146,9 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
             pic_hide.Visible = false;
             name_teacher.Visible = true;
             phone_teacher.Visible = true;
-            qualification_teacher.Visible = true;
             address_teacher.Visible = true;
             picture_name.Visible = true;
             picture_phone.Visible = true;
-            picture_qualification.Visible = true;
             picture_address.Visible = true;
 
 
@@ -163,7 +159,6 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
                 name_teacher.Text = row.Cells["Teacher Name"].Value.ToString();
                 phone_teacher.Text = row.Cells["Phone Number"].Value.ToString();
-                qualification_teacher.Text = row.Cells["Qualification"].Value.ToString();
                 address_teacher.Text = row.Cells["Address"].Value.ToString();
                 teacher_id = row.Cells["Teacher ID"].Value.ToString();
             }
@@ -240,7 +235,8 @@ SELECT
     u.Name AS [Teacher Name],
     u.phone_number AS [Phone Number],
     tp.qualification AS Qualification,
-    tp.address AS Address
+    tp.address AS Address,
+    tp.unique_id
 FROM 
     users u
 JOIN 
@@ -248,6 +244,9 @@ JOIN
 where tp.qualification = '{search.Text}'
 ";
             SqlDataReader red = databse.ExecuteReader(query);
+            if( red.Read()) { 
+                teacher_id = red["unique_id"].ToString();
+            }
 
             DataTable dt = new DataTable();
             dt.Load(red);
@@ -257,6 +256,7 @@ where tp.qualification = '{search.Text}'
 
 
         }
+
 
 
 
@@ -301,7 +301,7 @@ where tp.qualification = '{search.Text}'
     al.salary AS [Salary],
     tp.qualification AS Qualification,
     tp.address AS Address,
-    al.allocation_id AS [Allocation ID]
+    al.allocation_id
     
 FROM
     users u
