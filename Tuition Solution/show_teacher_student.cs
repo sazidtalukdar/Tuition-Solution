@@ -38,7 +38,7 @@ namespace Tuition_Solution
             }
 
 
-            string query = @"select * from users where status = 'ACTIVE' and role = 'TEACHER' or role = 'SUDENT' ";
+            string query = @"select * from users where status = 'ACTIVE' and role = 'TEACHER' or  role = 'STUDENT' ";
             SqlDataReader red = databse.ExecuteReader(query);
             DataTable dt = new DataTable();
             dt.Load(red);
@@ -54,10 +54,23 @@ namespace Tuition_Solution
 
         private void delete_bt(object sender, EventArgs e)
         {
-            string query = $@"delete from users where unique_id = '{unique_id}' ;
-delete from student_profile where unique_id = '{unique_id}' or delete from teacher_profile where unique_id = '{unique_id}';
-delete from allocarions where student_id = '{unique_id}' or delete from allocations where teacher_id = '{unique_id}';
+            string query = $@"
+delete from allocations where student_id = '{unique_id}' or teacher_id = '{unique_id}';
+delete from student_profiles where unique_id = '{unique_id}';
+delete from teacher_profiles where unique_id = '{unique_id}';
+delete from users where unique_id = '{unique_id}';
 ";
+
+            int result = databse.ExecuteNonQuery(query);
+            if (result > 0)
+            {
+                MessageBox.Show($"Successfully deleted {name}");
+                
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete user.");
+            }
         }
 
 

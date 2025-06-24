@@ -90,6 +90,7 @@
             Back.Size = new Size(152, 45);
             Back.TabIndex = 10;
             Back.Text = "Back";
+            Back.Click += back_bt;
             // 
             // delete
             // 
@@ -108,6 +109,7 @@
             delete.Size = new Size(152, 45);
             delete.TabIndex = 11;
             delete.Text = "Delete Users";
+            delete.Click += delete_bt;
             // 
             // activate
             // 
@@ -119,7 +121,7 @@
             activate.FillColor = Color.FromArgb(40, 42, 52);
             activate.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             activate.ForeColor = Color.White;
-            activate.Location = new Point(498, 42);
+            activate.Location = new Point(340, 30);
             activate.Name = "activate";
             activate.PressedColor = Color.FromArgb(40, 42, 52);
             activate.ShadowDecoration.CustomizableEdges = customizableEdges6;

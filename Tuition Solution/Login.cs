@@ -90,7 +90,7 @@ namespace Tuition_Solution
                             MessageBox.Show("Login successful!");
                             if (role == "ADMIN")
                             {
-                                var s = new registration();
+                                var s = new Admin_Dashboard(name, phone, unique_id);
                                 s.Show();
                                 this.Hide();
 
@@ -103,7 +103,7 @@ namespace Tuition_Solution
                             }
                             else if (role == "STUDENT")
                             {
-                                var s = new Student_Dashboard(name,phone,unique_id);
+                                var s = new student_dash(name,phone,unique_id);
                                 s.Show();
                                 this.Hide();
 
