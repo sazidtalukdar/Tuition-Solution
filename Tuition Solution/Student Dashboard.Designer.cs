@@ -32,6 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel3 = new Panel();
@@ -66,6 +70,8 @@
             selest_subject = new ComboBox();
             qualification_l = new Label();
             phone_l = new Label();
+            guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
@@ -283,6 +289,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(74, 144, 226);
+            panel2.Controls.Add(guna2GradientButton2);
             panel2.Controls.Add(time_student);
             panel2.Controls.Add(salary_for_teacher);
             panel2.Controls.Add(name_teacher);
@@ -459,12 +466,48 @@
             phone_l.TabIndex = 26;
             phone_l.Text = "Phone";
             // 
+            // guna2GradientButton1
+            // 
+            guna2GradientButton1.CustomizableEdges = customizableEdges3;
+            guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2GradientButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2GradientButton1.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            guna2GradientButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2GradientButton1.Font = new Font("Segoe UI", 9F);
+            guna2GradientButton1.ForeColor = Color.White;
+            guna2GradientButton1.Location = new Point(657, 201);
+            guna2GradientButton1.Name = "guna2GradientButton1";
+            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GradientButton1.Size = new Size(188, 56);
+            guna2GradientButton1.TabIndex = 31;
+            guna2GradientButton1.Text = "guna2GradientButton1";
+            // 
+            // guna2GradientButton2
+            // 
+            guna2GradientButton2.Animated = true;
+            guna2GradientButton2.CustomizableEdges = customizableEdges1;
+            guna2GradientButton2.DisabledState.BorderColor = Color.DarkGray;
+            guna2GradientButton2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2GradientButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2GradientButton2.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            guna2GradientButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2GradientButton2.Font = new Font("Segoe UI", 9F);
+            guna2GradientButton2.ForeColor = Color.White;
+            guna2GradientButton2.Location = new Point(538, 148);
+            guna2GradientButton2.Name = "guna2GradientButton2";
+            guna2GradientButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GradientButton2.Size = new Size(114, 45);
+            guna2GradientButton2.TabIndex = 30;
+            guna2GradientButton2.Text = "guna2GradientButton2";
+            // 
             // Student_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1127, 521);
+            Controls.Add(guna2GradientButton1);
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -515,5 +558,7 @@
         private ComboBox selest_subject;
         private Label qualification_l;
         private Label phone_l;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
     }
 }

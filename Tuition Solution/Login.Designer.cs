@@ -47,6 +47,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Blue;
             label1.Location = new Point(36, 80);
@@ -59,6 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Blue;
             label2.Location = new Point(36, 160);
@@ -141,6 +143,7 @@
             // 
             show_pass.AutoSize = true;
             show_pass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            show_pass.ForeColor = Color.White;
             show_pass.Location = new Point(207, 219);
             show_pass.Name = "show_pass";
             show_pass.Size = new Size(147, 25);
@@ -163,7 +166,7 @@
             // 
             // login_panel
             // 
-            login_panel.BackColor = Color.White;
+            login_panel.BackColor = Color.FromArgb(40, 42, 52);
             login_panel.Controls.Add(label3);
             login_panel.Controls.Add(textBox1);
             login_panel.Controls.Add(label1);
@@ -182,7 +185,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
             Controls.Add(login_panel);
             Controls.Add(pictureBox2);

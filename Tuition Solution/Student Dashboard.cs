@@ -35,7 +35,7 @@ namespace Tuition_Solution
 
         private void Student_Dashboard_Load(object sender, EventArgs e)
         {
-          
+
             selest_subject.Items.Add("OP2");
             load_data();
             phone_teacher.Visible = false;
@@ -43,7 +43,7 @@ namespace Tuition_Solution
             address_teacher.Visible = false;
             phone_l.Visible = false;
             qualification_l.Visible = false;
-           
+
 
 
             string query = $@"
@@ -94,7 +94,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
             name_teacher.Visible = true;
             phone_teacher.Visible = true;
             qualification_teacher.Visible = true;
@@ -300,11 +300,6 @@ where al.status = 'ACTIVE' and al.student_id= '{unique_id}'";
             change_pass.Show();
 
         }
-
-
-
-
-        
     }
 
 }
