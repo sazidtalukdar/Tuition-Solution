@@ -336,7 +336,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(715, 306);
             dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellContentClick;
             // 
             // guna2Button1
             // 

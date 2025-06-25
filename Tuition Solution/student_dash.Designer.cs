@@ -615,6 +615,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(708, 315);
             dataGridView1.TabIndex = 44;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // dataGridView2
             // 
@@ -631,6 +632,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(708, 315);
             dataGridView2.TabIndex = 45;
+            dataGridView2.CellClick += dataGridView2_CellClick;
             // 
             // student_dash
             // 

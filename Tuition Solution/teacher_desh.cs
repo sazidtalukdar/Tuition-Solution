@@ -85,7 +85,7 @@ namespace Tuition_Solution
             address_teacher.Visible = true;
             time_student.Visible = true;
             salary_for_teacher.Visible = true;
-            picture_name.Visible = true;  
+            picture_name.Visible = true;
             picture_phone.Visible = true;
             picture_address.Visible = true;
             id_box.Visible = true;
@@ -237,7 +237,7 @@ where al.status = 'ACTIVE' and al.teacher_id= '{unique_id}'";
 
         private void search_bt_Click(object sender, EventArgs e)
         {
-            if(searchbox.Text != "")
+            if (searchbox.Text != "")
             {
                 dataGridView1.Visible = false;
                 dataGridView2.Visible = true;
@@ -334,6 +334,23 @@ update allocations set status = 'ACTIVE' where allocation_id = '{request_id}' an
 
 
 
+        private void reject_bt_Click(object sender, EventArgs e)
+        {
+            string query = $"delete from teacher_requests where teacher_id= '{unique_id}'  and request_id='{request_id}'";
+            int res = databse.ExecuteNonQuery(query);
+            if (res > 0)
+            {
+                MessageBox.Show("Request rejected successfully.");
+                student_request_load();
+            }
+            else
+            {
+                MessageBox.Show("Failed to reject request.");
+            }
+        }
+
+
+
         private void teacher_desh_Load(object sender, EventArgs e)
         {
             id_box.Visible = false;
@@ -374,9 +391,6 @@ where al.status = 'PENDING' and u.role = 'STUDENT' and al.teacher_id = '{unique_
             dt.Load(red);
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        } 
-
-
-
+        }
     }
 }

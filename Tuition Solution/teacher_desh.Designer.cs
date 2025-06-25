@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher_desh));
@@ -65,6 +66,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             delete_account = new LinkLabel();
             change_pass = new LinkLabel();
             dataGridView1 = new DataGridView();
@@ -99,6 +103,7 @@
             subject_box = new Guna.UI2.WinForms.Guna2TextBox();
             picture_qualification = new PictureBox();
             dataGridView2 = new DataGridView();
+            reject_bt = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_show).BeginInit();
@@ -144,6 +149,14 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Location = new Point(260, 183);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(720, 336);
@@ -653,11 +666,38 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.Location = new Point(260, 183);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(720, 336);
             dataGridView2.TabIndex = 61;
             dataGridView2.CellClick += dataGridView2_CellClick;
+            // 
+            // reject_bt
+            // 
+            reject_bt.CustomizableEdges = customizableEdges37;
+            reject_bt.DisabledState.BorderColor = Color.DarkGray;
+            reject_bt.DisabledState.CustomBorderColor = Color.DarkGray;
+            reject_bt.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            reject_bt.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            reject_bt.FillColor = Color.FromArgb(40, 42, 52);
+            reject_bt.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            reject_bt.ForeColor = Color.White;
+            reject_bt.Location = new Point(696, 135);
+            reject_bt.Name = "reject_bt";
+            reject_bt.PressedColor = Color.FromArgb(40, 42, 52);
+            reject_bt.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            reject_bt.Size = new Size(114, 34);
+            reject_bt.TabIndex = 63;
+            reject_bt.Text = "Reject";
+            reject_bt.Click += reject_bt_Click;
             // 
             // teacher_desh
             // 
@@ -665,6 +705,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
+            Controls.Add(reject_bt);
             Controls.Add(id_box);
             Controls.Add(dataGridView2);
             Controls.Add(picture_qualification);
@@ -744,5 +785,6 @@
         private PictureBox picture_qualification;
         private DataGridView dataGridView2;
         private Label id_box;
+        private Guna.UI2.WinForms.Guna2Button reject_bt;
     }
 }
