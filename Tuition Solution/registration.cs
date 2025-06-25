@@ -25,7 +25,7 @@ namespace Tuition_Solution
 
         private void singup_Click(object sender, EventArgs e)
         {
-            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" ||gender_check()=="" || role_check()=="" || !log_res.check_phone(phonebox.Text) )
+            if (phonebox.Text == "" || nmaebox.Text == "" || usernamebox.Text == "" || passbox.Text == "" || gender_check() == "" || role_check() == "" || !log_res.check_phone(phonebox.Text))
             {
                 MessageBox.Show("Please fill in all fields aand check the phone number .");
 
@@ -64,9 +64,9 @@ namespace Tuition_Solution
                         int res = databse.ExecuteNonQuery(query);
                         int res1 = databse.ExecuteNonQuery(final_query);
 
-                        if (res > 0 && res1>0)
+                        if (res > 0 && res1 > 0)
                         {
-                           
+
                             MessageBox.Show("Registration  Successfull");
                         }
                         else
@@ -98,7 +98,7 @@ namespace Tuition_Solution
             {
                 return gender_male.Text.ToString();
             }
-            else if(gender_female.Checked)
+            else if (gender_female.Checked)
             {
                 return gender_female.Text.ToString();
             }
@@ -118,7 +118,7 @@ namespace Tuition_Solution
             {
                 return role_student.Text.ToString();
             }
-            else if(role_teacher.Checked)
+            else if (role_teacher.Checked)
             {
                 return role_teacher.Text.ToString();
             }
@@ -146,12 +146,17 @@ namespace Tuition_Solution
 
         private void registration_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void registration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

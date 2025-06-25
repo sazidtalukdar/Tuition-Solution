@@ -350,6 +350,7 @@
             Name = "registration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "registration";
+            FormClosed += registration_FormClosed;
             Load += registration_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
