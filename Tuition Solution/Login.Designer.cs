@@ -50,7 +50,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(36, 80);
+            label1.Location = new Point(36, 77);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(101, 25);
@@ -63,7 +63,7 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Blue;
-            label2.Location = new Point(36, 160);
+            label2.Location = new Point(36, 151);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(97, 25);
@@ -115,7 +115,7 @@
             linkLabel1.Location = new Point(36, 219);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(255, 52);
-            linkLabel1.TabIndex = 8;
+            linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
             linkLabel1.Click += forgot_click;
@@ -148,7 +148,7 @@
             show_pass.Location = new Point(207, 219);
             show_pass.Name = "show_pass";
             show_pass.Size = new Size(147, 25);
-            show_pass.TabIndex = 13;
+            show_pass.TabIndex = 4;
             show_pass.Text = "Show Password";
             show_pass.UseVisualStyleBackColor = true;
             show_pass.CheckedChanged += show_pass_click;
@@ -162,7 +162,7 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(206, 34);
-            textBox1.TabIndex = 14;
+            textBox1.TabIndex = 3;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += passbox_click;
             // 

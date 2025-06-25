@@ -316,7 +316,7 @@
             phone_teacher.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             phone_teacher.ForeColor = Color.White;
             phone_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            phone_teacher.Location = new Point(170, 99);
+            phone_teacher.Location = new Point(183, 101);
             phone_teacher.Name = "phone_teacher";
             phone_teacher.PlaceholderText = "";
             phone_teacher.SelectedText = "";
@@ -622,7 +622,7 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.InfoText;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
