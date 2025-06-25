@@ -92,6 +92,8 @@
             change_pass = new LinkLabel();
             selest_subject = new ComboBox();
             dateTimePicker = new DateTimePicker();
+            dataGridView2 = new DataGridView();
+            id_box = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -105,6 +107,7 @@
             guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox8
@@ -333,6 +336,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += allocatin_bt_click;
             // 
             // pictureBox1
             // 
@@ -343,6 +347,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += logout_bt_click;
             // 
             // allocation
             // 
@@ -354,7 +359,7 @@
             allocation.FillColor = Color.FromArgb(40, 42, 52);
             allocation.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             allocation.ForeColor = Color.White;
-            allocation.Location = new Point(64, 349);
+            allocation.Location = new Point(56, 349);
             allocation.Name = "allocation";
             allocation.PressedColor = Color.FromArgb(40, 42, 52);
             allocation.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -532,7 +537,7 @@
             guna2GradientPanel1.Controls.Add(allocation);
             guna2GradientPanel1.Controls.Add(logout);
             guna2GradientPanel1.CustomizableEdges = customizableEdges31;
-            guna2GradientPanel1.Location = new Point(2, 1);
+            guna2GradientPanel1.Location = new Point(1, 1);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2GradientPanel1.Size = new Size(259, 519);
@@ -540,20 +545,23 @@
             // 
             // delete_account
             // 
-            delete_account.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            delete_account.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             delete_account.ForeColor = Color.Brown;
-            delete_account.Location = new Point(145, 456);
+            delete_account.LinkColor = Color.White;
+            delete_account.Location = new Point(142, 458);
             delete_account.Name = "delete_account";
-            delete_account.Size = new Size(108, 23);
+            delete_account.Size = new Size(119, 23);
             delete_account.TabIndex = 43;
             delete_account.TabStop = true;
             delete_account.Text = "Delete Account";
             // 
             // change_pass
             // 
-            change_pass.Location = new Point(20, 458);
+            change_pass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            change_pass.LinkColor = Color.White;
+            change_pass.Location = new Point(4, 458);
             change_pass.Name = "change_pass";
-            change_pass.Size = new Size(126, 23);
+            change_pass.Size = new Size(136, 23);
             change_pass.TabIndex = 42;
             change_pass.TabStop = true;
             change_pass.Text = "Change Password";
@@ -578,12 +586,34 @@
             dateTimePicker.Size = new Size(200, 29);
             dateTimePicker.TabIndex = 41;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(343, 203);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(597, 263);
+            dataGridView2.TabIndex = 42;
+            dataGridView2.CellClick += dataGridView2_CellClick;
+            // 
+            // id_box
+            // 
+            id_box.AutoSize = true;
+            id_box.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            id_box.ForeColor = Color.White;
+            id_box.Location = new Point(21, 22);
+            id_box.Name = "id_box";
+            id_box.Size = new Size(63, 25);
+            id_box.TabIndex = 43;
+            id_box.Text = "label1";
+            // 
             // student_dash
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
+            Controls.Add(id_box);
+            Controls.Add(dataGridView2);
             Controls.Add(dateTimePicker);
             Controls.Add(selest_subject);
             Controls.Add(pictureBox8);
@@ -603,6 +633,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(guna2GradientPanel1);
             Name = "student_dash";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "student_dash";
             Load += student_dash_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -618,7 +649,9 @@
             guna2GradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -654,5 +687,7 @@
         private Guna.UI2.WinForms.Guna2TextBox addressbox_user;
         private LinkLabel delete_account;
         private LinkLabel change_pass;
+        private DataGridView dataGridView2;
+        private Label id_box;
     }
 }

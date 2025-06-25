@@ -19,6 +19,9 @@ namespace Tuition_Solution
         public Login()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         private void Login_Load(object sender, EventArgs e)

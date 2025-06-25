@@ -83,16 +83,16 @@
             // 
             namebox.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             namebox.ForeColor = Color.FromArgb(0, 192, 0);
-            namebox.Location = new Point(64, 30);
+            namebox.Location = new Point(28, 18);
             namebox.Name = "namebox";
-            namebox.Size = new Size(332, 39);
+            namebox.Size = new Size(332, 68);
             namebox.TabIndex = 4;
             namebox.Text = "label1";
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Blue;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(162, 86);
             label2.Name = "label2";
             label2.Size = new Size(100, 32);
@@ -101,8 +101,8 @@
             // 
             // label3
             // 
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Blue;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(162, 162);
             label3.Name = "label3";
             label3.Size = new Size(163, 32);
@@ -113,6 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(618, 369);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -122,6 +123,7 @@
             Controls.Add(Submit);
             Controls.Add(pass);
             Name = "Change_Pass";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Change_Pass";
             Load += Change_Pass_Load;
             ResumeLayout(false);

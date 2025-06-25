@@ -44,51 +44,59 @@ namespace Tuition_Solution
             pic_hide.Visible = true;
             guna2GradientPanel1.Visible = true;
             guna2GradientPanel1.Width = 259;
+            name_teacher.Visible = false;
+            phone_teacher.Visible = false;
+            address_teacher.Visible = false;
             picture_name.Visible = false;
             picture_phone.Visible = false;
-
             picture_address.Visible = false;
-            phone_teacher.Visible = false;
-            //qualification_teacher.Visible = false;
-            address_teacher.Visible = false;
-            name_teacher.Visible = false;
-            address_teacher.Visible = false;
         }
 
 
         private void pic_hide_Click(object sender, EventArgs e)
         {
+            guna2GradientPanel1.Width = 55;
             pic_show.Visible = true;
             pic_hide.Visible = false;
             guna2GradientPanel1.Visible = true;
-            guna2GradientPanel1.Width = 55;
-           
-                picture_name.Visible = true;
-                picture_phone.Visible = true;
-                picture_address.Visible = true;
+            name_teacher.Visible = true;
+            phone_teacher.Visible = true;
+            address_teacher.Visible = true;
+            picture_name.Visible = true;
+            picture_phone.Visible = true;
+            picture_address.Visible = true;
 
-                phone_teacher.Visible = true;
-                address_teacher.Visible = true;
-                name_teacher.Visible = true;
 
-            
         }
 
         private void student_dash_Load(object sender, EventArgs e)
         {
+            id_box.Text = $"ID {unique_id}";
+            load_teacher_data();
+            dataGridView2.Visible = false;
+            guna2GradientPanel1.Visible = true;
+            pic_show.Visible = true;
+            guna2GradientPanel1.Width = 55;
             selest_subject.Items.Add("OP2");
             load_data();
             name_teacher.Visible = false;
             phone_teacher.Visible = false;
             address_teacher.Visible = false;
             pic_hide.Visible = false;
-            guna2GradientPanel1.Width = 55;
             picture_name.Visible=false;
             picture_phone.Visible = false;
             picture_address.Visible = false;
 
 
 
+
+        }
+
+
+
+
+        private void load_teacher_data()
+        {
 
             string query = $@"
 SELECT 
@@ -115,28 +123,6 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
         }
 
 
-       
-
-
-
-
-        private void qualification_l_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void phone_l_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
 
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -155,6 +141,36 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+
+                name_teacher.Text = row.Cells["Teacher Name"].Value.ToString();
+                phone_teacher.Text = row.Cells["Phone Number"].Value.ToString();
+                address_teacher.Text = row.Cells["Address"].Value.ToString();
+                teacher_id = row.Cells["Teacher ID"].Value.ToString();
+            }
+        }
+
+
+
+
+
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            guna2GradientPanel1.Width = 55;
+            pic_show.Visible = true;
+            pic_hide.Visible = false;
+            name_teacher.Visible = true;
+            phone_teacher.Visible = true;
+            address_teacher.Visible = true;
+            picture_name.Visible = true;
+            picture_phone.Visible = true;
+            picture_address.Visible = true;
+
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
 
 
                 name_teacher.Text = row.Cells["Teacher Name"].Value.ToString();
@@ -230,30 +246,39 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
         private void search_bt_Click(object sender, EventArgs e)
         {
-            string query = $@"
+            if (search.Text != "")
+            {
+
+                dataGridView1.Visible = false;
+                dataGridView2.Visible = true;
+                string query = $@"
 SELECT 
     u.Name AS [Teacher Name],
     u.phone_number AS [Phone Number],
     tp.qualification AS Qualification,
     tp.address AS Address,
-    tp.unique_id
+    tp.teacher_id As [Teacher ID]
 FROM 
     users u
 JOIN 
     teacher_profiles tp ON u.unique_id = tp.unique_id
 where tp.qualification = '{search.Text}'
 ";
-            SqlDataReader red = databse.ExecuteReader(query);
-            if( red.Read()) { 
-                teacher_id = red["unique_id"].ToString();
+                using (SqlDataReader red = databse.ExecuteReader(query))
+                {
+
+
+                    DataTable dt = new DataTable();
+                    dt.Load(red);
+                    dataGridView2.DataSource = dt;
+                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                }
             }
-
-            DataTable dt = new DataTable();
-            dt.Load(red);
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
+            else { 
+                dataGridView2.Visible = false;
+                dataGridView1.Visible = true;
+            }
 
         }
 

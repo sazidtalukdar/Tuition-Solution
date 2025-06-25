@@ -25,6 +25,7 @@ namespace Tuition_Solution
 
         private void show_teacher_student_Load(object sender, EventArgs e)
         {
+            namebox.Visible = false;
             if (flag)
             {
                 activate.Visible = true;
@@ -76,8 +77,6 @@ delete from users where unique_id = '{unique_id}';
 
         private void back_bt(object sender, EventArgs e)
         {
-            var admin = new Admin_Dashboard();
-            admin.Show();
             this.Hide();
 
 
@@ -90,9 +89,7 @@ delete from users where unique_id = '{unique_id}';
             if (result > 0)
             {
                 MessageBox.Show($"Successfully activated {name}");
-                var admin = new Admin_Dashboard();
-                admin.Show();
-                this.Hide();
+                
             }
             else
             {
@@ -102,6 +99,7 @@ delete from users where unique_id = '{unique_id}';
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            namebox.Visible = true;
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             unique_id = row.Cells["unique_id"].Value.ToString();
             name = row.Cells["Name"].Value.ToString();

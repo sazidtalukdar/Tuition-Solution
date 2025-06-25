@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,7 @@ namespace Tuition_Solution
             address_teacher.Visible = false;
             name_teacher.Visible = false;
             address_teacher.Visible = false;
+            id_box.Visible = false;
         }
 
 
@@ -66,6 +68,7 @@ namespace Tuition_Solution
             qualification_teacher.Visible = true;
             address_teacher.Visible = true;
             name_teacher.Visible = true;
+            id_box.Visible = true;
 
 
         }
@@ -76,6 +79,7 @@ namespace Tuition_Solution
 
             guna2GradientPanel1.Width = 55;
             pic_hide.Visible = false;
+            pic_show.Visible = true; // need to change
             name_teacher.Visible = true;
             phone_teacher.Visible = true;
             address_teacher.Visible = true;
@@ -84,6 +88,41 @@ namespace Tuition_Solution
             picture_name.Visible = true;  
             picture_phone.Visible = true;
             picture_address.Visible = true;
+            id_box.Visible = true;
+
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+
+                name_teacher.Text = row.Cells["Student Name"].Value.ToString();
+                phone_teacher.Text = row.Cells["Phone Number"].Value.ToString();
+                subject_box.Text = row.Cells["Subject"].Value.ToString();
+                address_teacher.Text = row.Cells["Address"].Value.ToString();
+                student_id = row.Cells["Student ID"].Value.ToString();
+                time_student.Text = row.Cells["Time"].Value.ToString();
+                salary_for_teacher.Text = row.Cells["Salary"].Value.ToString();
+                request_id = row.Cells["Request ID"].Value.ToString();
+            }
+        }
+
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            guna2GradientPanel1.Width = 55;
+            pic_hide.Visible = false;
+            pic_show.Visible = true; // need to change
+            name_teacher.Visible = true;
+            phone_teacher.Visible = true;
+            address_teacher.Visible = true;
+            time_student.Visible = true;
+            salary_for_teacher.Visible = true;
+            picture_name.Visible = true;
+            picture_phone.Visible = true;
+            picture_address.Visible = true;
+            id_box.Visible = true;
 
 
             if (e.RowIndex >= 0)
@@ -198,29 +237,44 @@ where al.status = 'ACTIVE' and al.teacher_id= '{unique_id}'";
 
         private void search_bt_Click(object sender, EventArgs e)
         {
-            string query = $@"
+            if(searchbox.Text != "")
+            {
+                dataGridView1.Visible = false;
+                dataGridView2.Visible = true;
+
+                string query = $@"
      select    u.Name AS [Student Name],
     al.subject as Subject,
     u.phone_number AS [Phone Number],
     al.time AS [Time],
     al.salary AS [Salary],
-    sp.address AS Address
+    sp.address AS Address,
+    sp.student_id as [Student ID] ,
+    al.request_id as [Request ID]
     from
     users u
     join 
     student_profiles sp ON u.unique_id = sp.student_id
     join
- allocations al ON al.student_id = sp.student_id
-where al.status = 'PENDING' and al.subject= '{searchbox.Text}'";
+ teacher_requests al ON al.student_id = sp.student_id
+where al.teacher_id = '{unique_id}' and al.subject= '{searchbox.Text}'";
 
-            SqlDataReader red = databse.ExecuteReader(query);
+                using (SqlDataReader red = databse.ExecuteReader(query))
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(red);
+                    dataGridView2.DataSource = dt;
 
-            DataTable dt = new DataTable();
-            dt.Load(red);
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
 
+            }
+            else
+            {
+                dataGridView2.Visible = false;
+                dataGridView1.Visible = true;
 
+            }
 
         }
 
@@ -268,6 +322,7 @@ update allocations set status = 'ACTIVE' where allocation_id = '{request_id}' an
             if (res > 0)
             {
                 MessageBox.Show("Allocation accepted successfully.");
+                student_request_load();
 
             }
             else
@@ -281,9 +336,19 @@ update allocations set status = 'ACTIVE' where allocation_id = '{request_id}' an
 
         private void teacher_desh_Load(object sender, EventArgs e)
         {
+            id_box.Visible = false;
+            id_box.Text = $"ID {unique_id}";
             load_data();
+            student_request_load();
+            dataGridView2.Visible = false;
 
- string query = $@"
+
+        }
+
+
+        private void student_request_load()
+        {
+            string query = $@"
 select
     u.Name as [Student Name],
     u.phone_number as [Phone Number],
@@ -309,6 +374,9 @@ where al.status = 'PENDING' and u.role = 'STUDENT' and al.teacher_id = '{unique_
             dt.Load(red);
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
+        } 
+
+
+
     }
 }

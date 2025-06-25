@@ -100,6 +100,7 @@
             Controls.Add(Back);
             Controls.Add(panel1);
             Name = "Allocation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Allocation";
             Load += Allocation_Load;
             panel1.ResumeLayout(false);

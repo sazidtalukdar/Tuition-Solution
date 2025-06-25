@@ -80,6 +80,7 @@
             userbox.Name = "userbox";
             userbox.Size = new Size(206, 34);
             userbox.TabIndex = 2;
+            userbox.TextAlign = HorizontalAlignment.Center;
             // 
             // button2
             // 
@@ -162,6 +163,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(206, 34);
             textBox1.TabIndex = 14;
+            textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += passbox_click;
             // 
             // login_panel

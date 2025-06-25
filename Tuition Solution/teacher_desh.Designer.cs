@@ -71,6 +71,7 @@
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pic_show = new PictureBox();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            id_box = new Label();
             qualification_teacher = new Guna.UI2.WinForms.Guna2TextBox();
             addressbox_user = new Guna.UI2.WinForms.Guna2TextBox();
             update = new Guna.UI2.WinForms.Guna2Button();
@@ -97,6 +98,7 @@
             pic_hide = new PictureBox();
             subject_box = new Guna.UI2.WinForms.Guna2TextBox();
             picture_qualification = new PictureBox();
+            dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_show).BeginInit();
@@ -111,15 +113,17 @@
             ((System.ComponentModel.ISupportInitialize)picture_name).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_hide).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_qualification).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // delete_account
             // 
-            delete_account.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            delete_account.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             delete_account.ForeColor = Color.Brown;
-            delete_account.Location = new Point(145, 456);
+            delete_account.LinkColor = Color.White;
+            delete_account.Location = new Point(137, 457);
             delete_account.Name = "delete_account";
-            delete_account.Size = new Size(108, 23);
+            delete_account.Size = new Size(119, 25);
             delete_account.TabIndex = 43;
             delete_account.TabStop = true;
             delete_account.Text = "Delete Account";
@@ -127,9 +131,11 @@
             // 
             // change_pass
             // 
-            change_pass.Location = new Point(20, 458);
+            change_pass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            change_pass.LinkColor = Color.White;
+            change_pass.Location = new Point(4, 458);
             change_pass.Name = "change_pass";
-            change_pass.Size = new Size(126, 23);
+            change_pass.Size = new Size(142, 23);
             change_pass.TabIndex = 42;
             change_pass.TabStop = true;
             change_pass.Text = "Change Password";
@@ -138,9 +144,9 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(333, 183);
+            dataGridView1.Location = new Point(260, 183);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(626, 301);
+            dataGridView1.Size = new Size(720, 336);
             dataGridView1.TabIndex = 44;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -156,7 +162,7 @@
             guna2GradientPanel1.Controls.Add(allocation);
             guna2GradientPanel1.Controls.Add(logout);
             guna2GradientPanel1.CustomizableEdges = customizableEdges19;
-            guna2GradientPanel1.Location = new Point(1, 0);
+            guna2GradientPanel1.Location = new Point(-2, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2GradientPanel1.Size = new Size(259, 519);
@@ -188,6 +194,17 @@
             guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2GradientPanel2.Size = new Size(195, 318);
             guna2GradientPanel2.TabIndex = 1;
+            // 
+            // id_box
+            // 
+            id_box.AutoSize = true;
+            id_box.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            id_box.ForeColor = Color.White;
+            id_box.Location = new Point(84, 9);
+            id_box.Name = "id_box";
+            id_box.Size = new Size(63, 25);
+            id_box.TabIndex = 62;
+            id_box.Text = "label1";
             // 
             // qualification_teacher
             // 
@@ -322,16 +339,18 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += allocatin_bt_click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(10, 416);
+            pictureBox1.Location = new Point(10, 408);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(44, 29);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += logout_bt_click;
             // 
             // allocation
             // 
@@ -619,12 +638,23 @@
             picture_qualification.TabIndex = 60;
             picture_qualification.TabStop = false;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(260, 183);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(720, 336);
+            dataGridView2.TabIndex = 61;
+            dataGridView2.CellClick += dataGridView2_CellClick;
+            // 
             // teacher_desh
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
+            Controls.Add(id_box);
+            Controls.Add(dataGridView2);
             Controls.Add(picture_qualification);
             Controls.Add(subject_box);
             Controls.Add(dataGridView1);
@@ -660,7 +690,9 @@
             ((System.ComponentModel.ISupportInitialize)picture_name).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_hide).EndInit();
             ((System.ComponentModel.ISupportInitialize)picture_qualification).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -696,5 +728,7 @@
         private Guna.UI2.WinForms.Guna2TextBox subject_box;
         private Guna.UI2.WinForms.Guna2TextBox qualification_teacher;
         private PictureBox picture_qualification;
+        private DataGridView dataGridView2;
+        private Label id_box;
     }
 }

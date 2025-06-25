@@ -55,7 +55,25 @@ namespace Tuition_Solution
 
 
         private void load_to_griedview() {
-            string query = @"select * from users where status = 'ACTIVE' and role = 'TEACHER' or role ='STUDENT' ";
+            string query = @"
+select 
+    u.Name AS 'name',
+    u.phone_number,
+    u.role AS 'role',
+    u.status AS 'status',
+    u.unique_id,
+    COALESCE(sp.email_id, tp.email_id) AS 'email',
+    COALESCE(sp.address, tp.address) AS 'address'
+from 
+    users u
+left join 
+    student_profiles sp ON u.unique_id = sp.student_id AND u.role = 'student'
+left join
+    teacher_profiles tp ON u.unique_id = tp.teacher_id AND u.role = 'teacher'
+where
+    u.status = 'suspended';
+";
+
             var red = databse.ExecuteReader(query);
             DataTable dt = new DataTable();
             dt.Load(red);
@@ -110,7 +128,7 @@ where u.status = 'ACTIVE' and u.role = 'STUDENT'
         {
             string query = @"select
 u.Name as 'Name',
-u.phone_number as 'Phone'
+u.phone_number ,
 ,u.role as 'Role',
 sp.address as 'Address',
 sp.email_id as 'Email'
@@ -140,7 +158,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
             address.Visible = true;
             name.Text = row.Cells["Name"].Value.ToString(); 
             phone.Text = row.Cells["phone_number"].Value.ToString();
-            //address.Text = row.Cells["Address"].Value.ToString();
+            address.Text = row.Cells["Address"].Value.ToString();
             unique_id = row.Cells["unique_id"].Value.ToString();
         }
 
@@ -157,6 +175,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
         {
             var del = new show_teacher_student(true);
             del.Show();
+            load_to_griedview();
         }
 
 
@@ -190,6 +209,34 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
                 }
          
             }
+        }
+
+
+
+
+        private void update_bt_Click(object sender, EventArgs e)
+        {
+            string query = $"update admin_profile set email = '{admin_email.Text}'";
+            string query1 = $"update users set phone_number = '{admin_phone.Text}', Name = '{admin_name.Text}' WHERE unique_id = '{admin_id}'";
+            int res = databse.ExecuteNonQuery(query1);
+            int res1 = databse.ExecuteNonQuery(query);
+            if (res > 0 && res1 > 0)
+            {
+                MessageBox.Show("Profile updated successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Failed to update profile. Please try again.");
+            }
+        }
+
+
+
+        private void logout_bt_click(object sender, EventArgs e)
+        {
+            var login = new Login();
+            login.Show();
+            this.Hide();
         }
 
 

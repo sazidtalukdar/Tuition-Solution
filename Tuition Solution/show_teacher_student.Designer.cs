@@ -121,7 +121,7 @@
             activate.FillColor = Color.FromArgb(40, 42, 52);
             activate.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             activate.ForeColor = Color.White;
-            activate.Location = new Point(340, 30);
+            activate.Location = new Point(498, 42);
             activate.Name = "activate";
             activate.PressedColor = Color.FromArgb(40, 42, 52);
             activate.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -142,6 +142,7 @@
             Controls.Add(namebox);
             Controls.Add(panel1);
             Name = "show_teacher_student";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "show_teacher_student";
             Load += show_teacher_student_Load;
             panel1.ResumeLayout(false);
