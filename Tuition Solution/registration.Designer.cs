@@ -282,7 +282,7 @@
             label3.Name = "label3";
             label3.Size = new Size(87, 20);
             label3.TabIndex = 4;
-            label3.Text = "Full Nmae :";
+            label3.Text = "Full Name :";
             // 
             // role_teacher
             // 
