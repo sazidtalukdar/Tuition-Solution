@@ -134,7 +134,7 @@ where u.status = 'ACTIVE' and u.role = 'STUDENT'
             string query = @"select
 u.Name as 'Name',
 u.phone_number ,
-,u.role as 'Role',
+u.role as 'Role',
 sp.address as 'Address',
 sp.email_id as 'Email'
 
