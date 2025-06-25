@@ -206,7 +206,7 @@ where al.status = 'ACTIVE' and al.teacher_id= '{unique_id}'";
 
             string query = $@"
     delete from allocations where teacher_id = '{unique_id}';
-    delete from teacher_profiles where student_id = '{unique_id}';
+    delete from teacher_profiles where teacher_id = '{unique_id}';
     delete from users where unique_id = '{unique_id}';
 ";
 
