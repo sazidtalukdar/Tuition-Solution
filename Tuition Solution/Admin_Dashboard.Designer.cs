@@ -65,6 +65,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            change_pass = new LinkLabel();
             pictureBox9 = new PictureBox();
             delete_user = new Guna.UI2.WinForms.Guna2Button();
             pic_show = new PictureBox();
@@ -108,6 +109,7 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.FromArgb(40, 42, 52);
+            guna2GradientPanel1.Controls.Add(change_pass);
             guna2GradientPanel1.Controls.Add(pictureBox9);
             guna2GradientPanel1.Controls.Add(delete_user);
             guna2GradientPanel1.Controls.Add(pic_show);
@@ -122,6 +124,18 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2GradientPanel1.Size = new Size(259, 519);
             guna2GradientPanel1.TabIndex = 0;
+            // 
+            // change_pass
+            // 
+            change_pass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            change_pass.LinkColor = Color.White;
+            change_pass.Location = new Point(48, 471);
+            change_pass.Name = "change_pass";
+            change_pass.Size = new Size(136, 23);
+            change_pass.TabIndex = 43;
+            change_pass.TabStop = true;
+            change_pass.Text = "Change Password";
+            change_pass.Click += change_pass_Click;
             // 
             // pictureBox9
             // 
@@ -629,5 +643,6 @@
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox search_box;
         private Guna.UI2.WinForms.Guna2Button reject;
+        private LinkLabel change_pass;
     }
 }

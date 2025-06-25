@@ -557,6 +557,7 @@
             delete_account.TabIndex = 43;
             delete_account.TabStop = true;
             delete_account.Text = "Delete Account";
+            delete_account.Click += delete_account_Click;
             // 
             // change_pass
             // 

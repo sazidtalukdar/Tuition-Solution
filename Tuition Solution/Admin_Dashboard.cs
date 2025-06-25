@@ -301,6 +301,14 @@ where
         {
             Application.Exit();
         }
+
+
+        private void change_pass_Click(object sender, EventArgs e)
+        {
+            var change_pass = new Change_Pass(admin_id, name_);
+            change_pass.Show();
+
+        }
     }
 
 }

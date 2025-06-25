@@ -50,7 +50,7 @@ namespace Tuition_Solution
                     if (res > 0)
                     {
                         MessageBox.Show("Password changed successfully.");
-                        this.Close();
+                        this.Hide();
                     }
                     else
                     {
