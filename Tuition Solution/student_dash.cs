@@ -40,6 +40,7 @@ namespace Tuition_Solution
 
         private void pic_show_Click(object sender, EventArgs e)
         {
+            id_box.Visible = false;
             pic_show.Visible = false;
             pic_hide.Visible = true;
             guna2GradientPanel1.Visible = true;
@@ -55,6 +56,7 @@ namespace Tuition_Solution
 
         private void pic_hide_Click(object sender, EventArgs e)
         {
+            id_box.Visible = true;
             guna2GradientPanel1.Width = 55;
             pic_show.Visible = true;
             pic_hide.Visible = false;
@@ -127,6 +129,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            id_box.Visible = false;
             guna2GradientPanel1.Width = 55;
             pic_show.Visible = true;
             pic_hide.Visible = false;
@@ -157,6 +160,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            id_box.Visible = false;
             guna2GradientPanel1.Width = 55;
             pic_show.Visible = true;
             pic_hide.Visible = false;

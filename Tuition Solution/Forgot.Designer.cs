@@ -100,6 +100,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(231, 162);
             label1.Name = "label1";
@@ -129,6 +130,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Blue;
             label3.Location = new Point(33, 159);
@@ -141,6 +143,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Blue;
             label4.Location = new Point(33, 219);
@@ -153,6 +156,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Blue;
             label5.Location = new Point(33, 276);
@@ -165,7 +169,7 @@
             // linkLabel2
             // 
             linkLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            linkLabel2.LinkColor = Color.Green;
+            linkLabel2.LinkColor = Color.Lime;
             linkLabel2.Location = new Point(258, 422);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(255, 52);
@@ -178,6 +182,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
             Controls.Add(linkLabel2);
             Controls.Add(label5);

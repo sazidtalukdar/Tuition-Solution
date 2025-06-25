@@ -99,7 +99,7 @@
             // linkLabel2
             // 
             linkLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            linkLabel2.LinkColor = Color.Green;
+            linkLabel2.LinkColor = Color.Chartreuse;
             linkLabel2.Location = new Point(113, 317);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(255, 52);

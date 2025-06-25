@@ -47,6 +47,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -59,6 +60,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pictureBox9 = new PictureBox();
             delete_user = new Guna.UI2.WinForms.Guna2Button();
@@ -83,6 +86,8 @@
             picture_name = new PictureBox();
             picture_phone = new PictureBox();
             picture_address = new PictureBox();
+            pictureBox3 = new PictureBox();
+            search_box = new Guna.UI2.WinForms.Guna2TextBox();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_show).BeginInit();
@@ -94,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)picture_name).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_phone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_address).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -201,6 +207,7 @@
             admin_email.FillColor = Color.FromArgb(40, 42, 52);
             admin_email.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             admin_email.Font = new Font("Segoe UI", 9F);
+            admin_email.ForeColor = Color.White;
             admin_email.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             admin_email.Location = new Point(5, 168);
             admin_email.Name = "admin_email";
@@ -222,6 +229,7 @@
             admin_phone.FillColor = Color.FromArgb(40, 42, 52);
             admin_phone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             admin_phone.Font = new Font("Segoe UI", 9F);
+            admin_phone.ForeColor = Color.White;
             admin_phone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             admin_phone.Location = new Point(5, 97);
             admin_phone.Name = "admin_phone";
@@ -243,6 +251,7 @@
             admin_name.FillColor = Color.FromArgb(40, 42, 52);
             admin_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             admin_name.Font = new Font("Segoe UI", 9F);
+            admin_name.ForeColor = Color.White;
             admin_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             admin_name.Location = new Point(3, 29);
             admin_name.Name = "admin_name";
@@ -315,9 +324,17 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(281, 194);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(267, 216);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(688, 314);
+            dataGridView1.Size = new Size(715, 306);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -331,7 +348,7 @@
             guna2Button1.FillColor = Color.FromArgb(40, 42, 52);
             guna2Button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(688, 12);
+            guna2Button1.Location = new Point(591, 12);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.PressedColor = Color.FromArgb(40, 42, 52);
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -382,8 +399,9 @@
             phone.FillColor = Color.FromArgb(40, 42, 52);
             phone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             phone.Font = new Font("Segoe UI", 9F);
+            phone.ForeColor = Color.White;
             phone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            phone.Location = new Point(521, 132);
+            phone.Location = new Point(491, 133);
             phone.Name = "phone";
             phone.PlaceholderText = "";
             phone.SelectedText = "";
@@ -403,8 +421,9 @@
             address.FillColor = Color.FromArgb(40, 42, 52);
             address.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             address.Font = new Font("Segoe UI", 9F);
+            address.ForeColor = Color.White;
             address.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            address.Location = new Point(713, 68);
+            address.Location = new Point(605, 68);
             address.Name = "address";
             address.PlaceholderText = "";
             address.SelectedText = "";
@@ -424,6 +443,7 @@
             name.FillColor = Color.FromArgb(40, 42, 52);
             name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             name.Font = new Font("Segoe UI", 9F);
+            name.ForeColor = Color.White;
             name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             name.Location = new Point(335, 68);
             name.Name = "name";
@@ -443,7 +463,7 @@
             apptove.FillColor = Color.FromArgb(40, 42, 52);
             apptove.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             apptove.ForeColor = Color.White;
-            apptove.Location = new Point(821, 132);
+            apptove.Location = new Point(760, 168);
             apptove.Name = "apptove";
             apptove.PressedColor = Color.FromArgb(40, 42, 52);
             apptove.ShadowDecoration.CustomizableEdges = customizableEdges30;
@@ -465,7 +485,7 @@
             // picture_phone
             // 
             picture_phone.Image = (Image)resources.GetObject("picture_phone.Image");
-            picture_phone.Location = new Point(473, 132);
+            picture_phone.Location = new Point(443, 133);
             picture_phone.Name = "picture_phone";
             picture_phone.Size = new Size(36, 31);
             picture_phone.SizeMode = PictureBoxSizeMode.Zoom;
@@ -475,12 +495,45 @@
             // picture_address
             // 
             picture_address.Image = (Image)resources.GetObject("picture_address.Image");
-            picture_address.Location = new Point(671, 67);
+            picture_address.Location = new Point(563, 67);
             picture_address.Name = "picture_address";
             picture_address.Size = new Size(36, 31);
             picture_address.SizeMode = PictureBoxSizeMode.Zoom;
             picture_address.TabIndex = 17;
             picture_address.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(738, 118);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(36, 31);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 19;
+            pictureBox3.TabStop = false;
+            // 
+            // search_box
+            // 
+            search_box.BackColor = Color.FromArgb(60, 63, 81);
+            search_box.CustomizableEdges = customizableEdges31;
+            search_box.DefaultText = "";
+            search_box.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            search_box.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            search_box.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            search_box.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            search_box.FillColor = Color.FromArgb(40, 42, 52);
+            search_box.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            search_box.Font = new Font("Segoe UI", 9F);
+            search_box.ForeColor = Color.White;
+            search_box.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            search_box.Location = new Point(780, 118);
+            search_box.Name = "search_box";
+            search_box.PlaceholderText = "";
+            search_box.SelectedText = "";
+            search_box.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            search_box.Size = new Size(189, 36);
+            search_box.TabIndex = 18;
+            search_box.TextChanged += search_bt_Click;
             // 
             // Admin_Dashboard
             // 
@@ -488,6 +541,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
+            Controls.Add(pictureBox3);
+            Controls.Add(search_box);
             Controls.Add(picture_address);
             Controls.Add(picture_phone);
             Controls.Add(picture_name);
@@ -500,6 +555,7 @@
             Controls.Add(guna2Button1);
             Controls.Add(dataGridView1);
             Controls.Add(guna2GradientPanel1);
+            ForeColor = Color.White;
             Name = "Admin_Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin_Dashboard";
@@ -515,6 +571,7 @@
             ((System.ComponentModel.ISupportInitialize)picture_name).EndInit();
             ((System.ComponentModel.ISupportInitialize)picture_phone).EndInit();
             ((System.ComponentModel.ISupportInitialize)picture_address).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -545,5 +602,7 @@
         private PictureBox picture_address;
         private Guna.UI2.WinForms.Guna2Button delete_user;
         private PictureBox pictureBox9;
+        private PictureBox pictureBox3;
+        private Guna.UI2.WinForms.Guna2TextBox search_box;
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.AccessControl;
@@ -17,6 +19,7 @@ namespace Tuition_Solution
         private string name_;
         private string phone_;
         private string admin_id;
+        private DataTable dt_p;
         public Admin_Dashboard(string name, string phone, string admin_id)
         {
             InitializeComponent();
@@ -76,6 +79,7 @@ where
 
             var red = databse.ExecuteReader(query);
             DataTable dt = new DataTable();
+            this.dt_p = dt;
             dt.Load(red);
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -156,7 +160,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
             name.Visible = true;
             phone.Visible = true;
             address.Visible = true;
-            name.Text = row.Cells["Name"].Value.ToString(); 
+            name.Text = row.Cells["Name"].Value.ToString();
             phone.Text = row.Cells["phone_number"].Value.ToString();
             address.Text = row.Cells["Address"].Value.ToString();
             unique_id = row.Cells["unique_id"].Value.ToString();
@@ -164,7 +168,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
 
         private void delete_bt_Click(object sender, EventArgs e)
-        { 
+        {
             var del = new show_teacher_student(false);
             del.Show();
             load_to_griedview();
@@ -207,7 +211,7 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
                     admin_name.Text = name_;
                     admin_phone.Text = phone_;
                 }
-         
+
             }
         }
 
@@ -241,6 +245,44 @@ where u.status = 'ACTIVE' and u.role = 'TEACHER'
 
 
 
+        private void search_bt_Click(object sender, EventArgs e)
+        {
+            if (search_box.Text != "")
+            {
+
+                string query = $@"
+select 
+    u.Name AS 'name',
+    u.phone_number,
+    u.role AS 'role',
+    u.status AS 'status',
+    u.unique_id,
+    COALESCE(sp.email_id, tp.email_id) AS 'email',
+    COALESCE(sp.address, tp.address) AS 'address'
+from 
+    users u
+left join 
+    student_profiles sp ON u.unique_id = sp.student_id AND u.role = 'student'
+left join
+    teacher_profiles tp ON u.unique_id = tp.teacher_id AND u.role = 'teacher'
+where
+    u.status = 'suspended' and (sp.student_id ='{search_box.Text}' or tp.teacher_id = '{search_box.Text}');
+";
+                SqlDataReader red = databse.ExecuteReader(query);
+                DataTable dt = new DataTable();
+                dt.Load(red);
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                dataGridView1.DataSource = dt_p;
+            }
+
+        } 
+
+
+
 
     }
+
 }

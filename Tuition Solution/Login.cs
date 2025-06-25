@@ -37,8 +37,8 @@ namespace Tuition_Solution
         {
 
 
-            string query1 = $"SELECT * FROM users WHERE [username] = '{userbox.Text}' AND password = '{textBox1.Text}'";
-            string query = $"SELECT COUNT(*) FROM users WHERE [username] = '{userbox.Text}' AND password = '{textBox1.Text}'";
+            string query1 = $"select * from users where [username] = '{userbox.Text}' and password = '{textBox1.Text}'";
+            string query = $"select count (*) from users where [username] = '{userbox.Text}' and password = '{textBox1.Text}'";
             SqlDataReader reader = databse.ExecuteReader(query1);
 
             int count = databse.ExecuteScalar(query);
@@ -72,7 +72,7 @@ namespace Tuition_Solution
 
                     }
 
-                    if (cpu_db_id == "cut")
+                    if (cpu_db_id == "cut" )
                     {
                         string query2 = $"update users set cpu_id = '{cpu_id}' where username = '{userbox.Text}'";
                         databse.ExecuteNonQuery(query2);
@@ -106,6 +106,7 @@ namespace Tuition_Solution
                             }
                             else if (role == "STUDENT")
                             {
+                                admin();
                                 var s = new student_dash(name,phone,unique_id);
                                 s.Show();
                                 this.Hide();
@@ -170,6 +171,12 @@ namespace Tuition_Solution
                 textBox1.PasswordChar = '*';
             }
 
+        }
+
+        private void admin()
+        {
+            string query = $"update users set cpu_id ='cut' where unique_id='{unique_id}'";
+                int res = databse.ExecuteNonQuery(query);
         }
 
 

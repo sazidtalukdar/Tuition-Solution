@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(40, 42, 52);
             panel1.Controls.Add(dataGridView1);
             panel1.Location = new Point(36, 157);
             panel1.Name = "panel1";
@@ -48,7 +48,6 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(21, 19);
             dataGridView1.Name = "dataGridView1";
@@ -94,6 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(685, 406);
             Controls.Add(delete);
             Controls.Add(namebox);

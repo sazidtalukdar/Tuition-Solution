@@ -61,6 +61,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -86,14 +88,14 @@
             pic_show = new PictureBox();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             addressbox_user = new Guna.UI2.WinForms.Guna2TextBox();
-            dataGridView1 = new DataGridView();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             delete_account = new LinkLabel();
             change_pass = new LinkLabel();
             selest_subject = new ComboBox();
             dateTimePicker = new DateTimePicker();
-            dataGridView2 = new DataGridView();
             id_box = new Label();
+            dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -105,8 +107,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_show).BeginInit();
             guna2GradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
@@ -200,7 +202,8 @@
             search.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             search.FillColor = Color.FromArgb(40, 42, 52);
             search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            search.Font = new Font("Segoe UI", 9F);
+            search.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            search.ForeColor = Color.White;
             search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             search.Location = new Point(780, 88);
             search.Name = "search";
@@ -222,7 +225,8 @@
             salary_for_teacher.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             salary_for_teacher.FillColor = Color.FromArgb(40, 42, 52);
             salary_for_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            salary_for_teacher.Font = new Font("Segoe UI", 9F);
+            salary_for_teacher.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            salary_for_teacher.ForeColor = Color.White;
             salary_for_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             salary_for_teacher.Location = new Point(765, 22);
             salary_for_teacher.Name = "salary_for_teacher";
@@ -243,7 +247,8 @@
             name_teacher.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             name_teacher.FillColor = Color.FromArgb(40, 42, 52);
             name_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            name_teacher.Font = new Font("Segoe UI", 9F);
+            name_teacher.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            name_teacher.ForeColor = Color.White;
             name_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             name_teacher.Location = new Point(183, 57);
             name_teacher.Name = "name_teacher";
@@ -264,7 +269,8 @@
             address_teacher.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             address_teacher.FillColor = Color.FromArgb(40, 42, 52);
             address_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            address_teacher.Font = new Font("Segoe UI", 9F);
+            address_teacher.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            address_teacher.ForeColor = Color.White;
             address_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             address_teacher.Location = new Point(290, 141);
             address_teacher.Name = "address_teacher";
@@ -285,7 +291,8 @@
             time_student.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             time_student.FillColor = Color.FromArgb(40, 42, 52);
             time_student.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            time_student.Font = new Font("Segoe UI", 9F);
+            time_student.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            time_student.ForeColor = Color.White;
             time_student.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             time_student.Location = new Point(466, 22);
             time_student.Name = "time_student";
@@ -306,7 +313,8 @@
             phone_teacher.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             phone_teacher.FillColor = Color.FromArgb(40, 42, 52);
             phone_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            phone_teacher.Font = new Font("Segoe UI", 9F);
+            phone_teacher.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            phone_teacher.ForeColor = Color.White;
             phone_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             phone_teacher.Location = new Point(170, 99);
             phone_teacher.Name = "phone_teacher";
@@ -418,6 +426,7 @@
             emailbox_user.FillColor = Color.FromArgb(40, 42, 52);
             emailbox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             emailbox_user.Font = new Font("Segoe UI", 9F);
+            emailbox_user.ForeColor = Color.White;
             emailbox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             emailbox_user.Location = new Point(5, 168);
             emailbox_user.Name = "emailbox_user";
@@ -439,6 +448,7 @@
             phonebox_user.FillColor = Color.FromArgb(40, 42, 52);
             phonebox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             phonebox_user.Font = new Font("Segoe UI", 9F);
+            phonebox_user.ForeColor = Color.White;
             phonebox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             phonebox_user.Location = new Point(5, 97);
             phonebox_user.Name = "phonebox_user";
@@ -460,6 +470,7 @@
             namebox_user.FillColor = Color.FromArgb(40, 42, 52);
             namebox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             namebox_user.Font = new Font("Segoe UI", 9F);
+            namebox_user.ForeColor = Color.White;
             namebox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             namebox_user.Location = new Point(3, 29);
             namebox_user.Name = "namebox_user";
@@ -507,6 +518,7 @@
             addressbox_user.FillColor = Color.FromArgb(40, 42, 52);
             addressbox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             addressbox_user.Font = new Font("Segoe UI", 9F);
+            addressbox_user.ForeColor = Color.White;
             addressbox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             addressbox_user.Location = new Point(5, 234);
             addressbox_user.Name = "addressbox_user";
@@ -515,15 +527,6 @@
             addressbox_user.ShadowDecoration.CustomizableEdges = customizableEdges28;
             addressbox_user.Size = new Size(186, 36);
             addressbox_user.TabIndex = 7;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(328, 183);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(626, 301);
-            dataGridView1.TabIndex = 22;
-            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // guna2GradientPanel1
             // 
@@ -537,7 +540,7 @@
             guna2GradientPanel1.Controls.Add(allocation);
             guna2GradientPanel1.Controls.Add(logout);
             guna2GradientPanel1.CustomizableEdges = customizableEdges31;
-            guna2GradientPanel1.Location = new Point(1, 1);
+            guna2GradientPanel1.Location = new Point(3, 1);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2GradientPanel1.Size = new Size(259, 519);
@@ -586,25 +589,48 @@
             dateTimePicker.Size = new Size(200, 29);
             dateTimePicker.TabIndex = 41;
             // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(343, 203);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(597, 263);
-            dataGridView2.TabIndex = 42;
-            dataGridView2.CellClick += dataGridView2_CellClick;
-            // 
             // id_box
             // 
             id_box.AutoSize = true;
             id_box.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             id_box.ForeColor = Color.White;
-            id_box.Location = new Point(21, 22);
+            id_box.Location = new Point(83, 22);
             id_box.Name = "id_box";
             id_box.Size = new Size(63, 25);
             id_box.TabIndex = 43;
             id_box.Text = "label1";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(272, 205);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(708, 315);
+            dataGridView1.TabIndex = 44;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.InfoText;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView2.Location = new Point(272, 205);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(708, 315);
+            dataGridView2.TabIndex = 45;
             // 
             // student_dash
             // 
@@ -612,8 +638,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
-            Controls.Add(id_box);
             Controls.Add(dataGridView2);
+            Controls.Add(dataGridView1);
+            Controls.Add(id_box);
             Controls.Add(dateTimePicker);
             Controls.Add(selest_subject);
             Controls.Add(pictureBox8);
@@ -630,8 +657,9 @@
             Controls.Add(time_student);
             Controls.Add(phone_teacher);
             Controls.Add(pic_hide);
-            Controls.Add(dataGridView1);
             Controls.Add(guna2GradientPanel1);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            ForeColor = Color.White;
             Name = "student_dash";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "student_dash";
@@ -647,8 +675,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_show).EndInit();
             guna2GradientPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -680,14 +708,14 @@
         private Guna.UI2.WinForms.Guna2TextBox namebox_user;
         private PictureBox pic_show;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
-        private DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private ComboBox selest_subject;
         private DateTimePicker dateTimePicker;
         private Guna.UI2.WinForms.Guna2TextBox addressbox_user;
         private LinkLabel delete_account;
         private LinkLabel change_pass;
-        private DataGridView dataGridView2;
         private Label id_box;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
     }
 }

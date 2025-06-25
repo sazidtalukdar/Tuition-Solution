@@ -71,7 +71,6 @@
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pic_show = new PictureBox();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            id_box = new Label();
             qualification_teacher = new Guna.UI2.WinForms.Guna2TextBox();
             addressbox_user = new Guna.UI2.WinForms.Guna2TextBox();
             update = new Guna.UI2.WinForms.Guna2Button();
@@ -82,6 +81,7 @@
             pictureBox1 = new PictureBox();
             allocation = new Guna.UI2.WinForms.Guna2Button();
             logout = new Guna.UI2.WinForms.Guna2Button();
+            id_box = new Label();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -195,17 +195,6 @@
             guna2GradientPanel2.Size = new Size(195, 318);
             guna2GradientPanel2.TabIndex = 1;
             // 
-            // id_box
-            // 
-            id_box.AutoSize = true;
-            id_box.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            id_box.ForeColor = Color.White;
-            id_box.Location = new Point(84, 9);
-            id_box.Name = "id_box";
-            id_box.Size = new Size(63, 25);
-            id_box.TabIndex = 62;
-            id_box.Text = "label1";
-            // 
             // qualification_teacher
             // 
             qualification_teacher.BackColor = Color.FromArgb(60, 63, 81);
@@ -218,6 +207,7 @@
             qualification_teacher.FillColor = Color.FromArgb(40, 42, 52);
             qualification_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             qualification_teacher.Font = new Font("Segoe UI", 9F);
+            qualification_teacher.ForeColor = Color.White;
             qualification_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             qualification_teacher.Location = new Point(5, 249);
             qualification_teacher.Name = "qualification_teacher";
@@ -239,6 +229,7 @@
             addressbox_user.FillColor = Color.FromArgb(40, 42, 52);
             addressbox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             addressbox_user.Font = new Font("Segoe UI", 9F);
+            addressbox_user.ForeColor = Color.White;
             addressbox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             addressbox_user.Location = new Point(6, 198);
             addressbox_user.Name = "addressbox_user";
@@ -279,6 +270,7 @@
             emailbox_user.FillColor = Color.FromArgb(40, 42, 52);
             emailbox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             emailbox_user.Font = new Font("Segoe UI", 9F);
+            emailbox_user.ForeColor = Color.White;
             emailbox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             emailbox_user.Location = new Point(5, 147);
             emailbox_user.Name = "emailbox_user";
@@ -300,6 +292,7 @@
             phonebox_user.FillColor = Color.FromArgb(40, 42, 52);
             phonebox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             phonebox_user.Font = new Font("Segoe UI", 9F);
+            phonebox_user.ForeColor = Color.White;
             phonebox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             phonebox_user.Location = new Point(5, 91);
             phonebox_user.Name = "phonebox_user";
@@ -321,6 +314,7 @@
             namebox_user.FillColor = Color.FromArgb(40, 42, 52);
             namebox_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             namebox_user.Font = new Font("Segoe UI", 9F);
+            namebox_user.ForeColor = Color.White;
             namebox_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             namebox_user.Location = new Point(3, 36);
             namebox_user.Name = "namebox_user";
@@ -389,6 +383,17 @@
             logout.TabIndex = 1;
             logout.Text = "LogOut";
             logout.Click += logout_bt_click;
+            // 
+            // id_box
+            // 
+            id_box.AutoSize = true;
+            id_box.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            id_box.ForeColor = Color.White;
+            id_box.Location = new Point(84, 9);
+            id_box.Name = "id_box";
+            id_box.Size = new Size(63, 25);
+            id_box.TabIndex = 62;
+            id_box.Text = "label1";
             // 
             // pictureBox8
             // 
@@ -481,6 +486,7 @@
             searchbox.FillColor = Color.FromArgb(40, 42, 52);
             searchbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             searchbox.Font = new Font("Segoe UI", 9F);
+            searchbox.ForeColor = Color.White;
             searchbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             searchbox.Location = new Point(785, 88);
             searchbox.Name = "searchbox";
@@ -503,6 +509,7 @@
             salary_for_teacher.FillColor = Color.FromArgb(40, 42, 52);
             salary_for_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             salary_for_teacher.Font = new Font("Segoe UI", 9F);
+            salary_for_teacher.ForeColor = Color.White;
             salary_for_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             salary_for_teacher.Location = new Point(770, 22);
             salary_for_teacher.Name = "salary_for_teacher";
@@ -524,6 +531,7 @@
             name_teacher.FillColor = Color.FromArgb(40, 42, 52);
             name_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             name_teacher.Font = new Font("Segoe UI", 9F);
+            name_teacher.ForeColor = Color.White;
             name_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             name_teacher.Location = new Point(188, 57);
             name_teacher.Name = "name_teacher";
@@ -545,6 +553,7 @@
             address_teacher.FillColor = Color.FromArgb(40, 42, 52);
             address_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             address_teacher.Font = new Font("Segoe UI", 9F);
+            address_teacher.ForeColor = Color.White;
             address_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             address_teacher.Location = new Point(301, 141);
             address_teacher.Name = "address_teacher";
@@ -566,6 +575,7 @@
             time_student.FillColor = Color.FromArgb(40, 42, 52);
             time_student.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             time_student.Font = new Font("Segoe UI", 9F);
+            time_student.ForeColor = Color.White;
             time_student.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             time_student.Location = new Point(471, 22);
             time_student.Name = "time_student";
@@ -587,6 +597,7 @@
             phone_teacher.FillColor = Color.FromArgb(40, 42, 52);
             phone_teacher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             phone_teacher.Font = new Font("Segoe UI", 9F);
+            phone_teacher.ForeColor = Color.White;
             phone_teacher.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             phone_teacher.Location = new Point(175, 99);
             phone_teacher.Name = "phone_teacher";
@@ -619,6 +630,7 @@
             subject_box.FillColor = Color.FromArgb(40, 42, 52);
             subject_box.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             subject_box.Font = new Font("Segoe UI", 9F);
+            subject_box.ForeColor = Color.White;
             subject_box.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             subject_box.Location = new Point(493, 93);
             subject_box.Name = "subject_box";
@@ -673,7 +685,9 @@
             Controls.Add(time_student);
             Controls.Add(phone_teacher);
             Controls.Add(pic_hide);
+            ForeColor = Color.White;
             Name = "teacher_desh";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "teacher_desh";
             Load += teacher_desh_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
