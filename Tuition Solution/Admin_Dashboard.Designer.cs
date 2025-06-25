@@ -62,6 +62,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pictureBox9 = new PictureBox();
             delete_user = new Guna.UI2.WinForms.Guna2Button();
@@ -88,6 +90,7 @@
             picture_address = new PictureBox();
             pictureBox3 = new PictureBox();
             search_box = new Guna.UI2.WinForms.Guna2TextBox();
+            reject = new Guna.UI2.WinForms.Guna2Button();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_show).BeginInit();
@@ -463,7 +466,7 @@
             apptove.FillColor = Color.FromArgb(40, 42, 52);
             apptove.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             apptove.ForeColor = Color.White;
-            apptove.Location = new Point(760, 168);
+            apptove.Location = new Point(840, 168);
             apptove.Name = "apptove";
             apptove.PressedColor = Color.FromArgb(40, 42, 52);
             apptove.ShadowDecoration.CustomizableEdges = customizableEdges30;
@@ -535,12 +538,32 @@
             search_box.TabIndex = 18;
             search_box.TextChanged += search_bt_Click;
             // 
+            // reject
+            // 
+            reject.CustomizableEdges = customizableEdges33;
+            reject.DisabledState.BorderColor = Color.DarkGray;
+            reject.DisabledState.CustomBorderColor = Color.DarkGray;
+            reject.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            reject.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            reject.FillColor = Color.FromArgb(40, 42, 52);
+            reject.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            reject.ForeColor = Color.White;
+            reject.Location = new Point(694, 168);
+            reject.Name = "reject";
+            reject.PressedColor = Color.FromArgb(40, 42, 52);
+            reject.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            reject.Size = new Size(114, 34);
+            reject.TabIndex = 20;
+            reject.Text = "Reject";
+            reject.Click += reject_bt_Click;
+            // 
             // Admin_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(981, 520);
+            Controls.Add(reject);
             Controls.Add(pictureBox3);
             Controls.Add(search_box);
             Controls.Add(picture_address);
@@ -604,5 +627,6 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox search_box;
+        private Guna.UI2.WinForms.Guna2Button reject;
     }
 }

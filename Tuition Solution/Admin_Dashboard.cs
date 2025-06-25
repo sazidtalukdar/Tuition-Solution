@@ -281,6 +281,22 @@ where
         } 
 
 
+        private void reject_bt_Click(object sender, EventArgs e)
+        {
+            string query = $"delete from users where unique_id = '{unique_id}'";
+            int result = databse.ExecuteNonQuery(query);
+            if (result > 0)
+            {
+                MessageBox.Show("Successfully rejected user.");
+                load_to_griedview();
+            }
+            else
+            {
+                MessageBox.Show("Failed to reject user.");
+            }
+        }
+
+
 
 
     }
