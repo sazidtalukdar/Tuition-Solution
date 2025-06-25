@@ -67,6 +67,11 @@ namespace Tuition_Solution
                 allocation_id = row.Cells["allocation_id"].Value.ToString();
             }
         }
+
+        private void Allocation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }

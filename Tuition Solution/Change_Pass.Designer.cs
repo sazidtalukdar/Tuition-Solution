@@ -125,6 +125,7 @@
             Name = "Change_Pass";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Change_Pass";
+            FormClosed += Change_Pass_FormClosed;
             Load += Change_Pass_Load;
             ResumeLayout(false);
         }

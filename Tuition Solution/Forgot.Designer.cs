@@ -201,6 +201,7 @@
             Name = "Forgot";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Forgot";
+            FormClosed += Forgot_FormClosed;
             Load += Forgot_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

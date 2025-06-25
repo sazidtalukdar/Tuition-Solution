@@ -15,7 +15,7 @@ namespace Tuition_Solution
     {
         private string unique_id;
         private string name;
-        public Change_Pass(string unique_id,string name)
+        public Change_Pass(string unique_id, string name)
         {
             InitializeComponent();
             this.unique_id = unique_id;
@@ -65,10 +65,13 @@ namespace Tuition_Solution
 
         private void back_bt_Click(object sender, EventArgs e)
         {
-           this.Hide();
+            this.Hide();
 
         }
 
-
+        private void Change_Pass_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -730,6 +730,7 @@
             Name = "teacher_desh";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "teacher_desh";
+            FormClosed += teacher_desh_FormClosed;
             Load += teacher_desh_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             guna2GradientPanel1.ResumeLayout(false);

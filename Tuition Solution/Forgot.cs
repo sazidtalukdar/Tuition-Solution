@@ -121,15 +121,17 @@ namespace Tuition_Solution
 
 
 
-        private void back_login_click(object sender , EventArgs e)
+        private void back_login_click(object sender, EventArgs e)
         {
             var login = new Login();
             login.Show();
             this.Hide();
         }
 
-
-
+        private void Forgot_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

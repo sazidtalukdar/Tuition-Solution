@@ -29,7 +29,7 @@ namespace Tuition_Solution
         }
         public student_dash()
         {
-            
+
         }
 
 
@@ -85,7 +85,7 @@ namespace Tuition_Solution
             phone_teacher.Visible = false;
             address_teacher.Visible = false;
             pic_hide.Visible = false;
-            picture_name.Visible=false;
+            picture_name.Visible = false;
             picture_phone.Visible = false;
             picture_address.Visible = false;
 
@@ -279,7 +279,8 @@ where tp.qualification = '{search.Text}'
 
                 }
             }
-            else { 
+            else
+            {
                 dataGridView2.Visible = false;
                 dataGridView1.Visible = true;
             }
@@ -381,8 +382,9 @@ where al.status = 'ACTIVE' and al.student_id= '{unique_id}'";
 
         }
 
-
-
-
+        private void student_dash_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -57,7 +57,8 @@ namespace Tuition_Solution
         }
 
 
-        private void load_to_griedview() {
+        private void load_to_griedview()
+        {
             string query = @"
 select 
     u.Name AS 'name',
@@ -278,7 +279,7 @@ where
                 dataGridView1.DataSource = dt_p;
             }
 
-        } 
+        }
 
 
         private void reject_bt_Click(object sender, EventArgs e)
@@ -296,9 +297,10 @@ where
             }
         }
 
-
-
-
+        private void Admin_Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }

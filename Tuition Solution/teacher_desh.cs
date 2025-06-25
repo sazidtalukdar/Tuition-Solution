@@ -392,5 +392,10 @@ where al.status = 'PENDING' and u.role = 'STUDENT' and al.teacher_id = '{unique_
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void teacher_desh_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

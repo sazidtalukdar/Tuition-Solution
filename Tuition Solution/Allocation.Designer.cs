@@ -102,6 +102,7 @@
             Name = "Allocation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Allocation";
+            FormClosed += Allocation_FormClosed;
             Load += Allocation_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

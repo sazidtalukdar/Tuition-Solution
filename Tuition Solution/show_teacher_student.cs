@@ -48,7 +48,7 @@ namespace Tuition_Solution
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
 
         }
 
@@ -66,7 +66,7 @@ delete from users where unique_id = '{unique_id}';
             if (result > 0)
             {
                 MessageBox.Show($"Successfully deleted {name}");
-                
+
             }
             else
             {
@@ -89,7 +89,7 @@ delete from users where unique_id = '{unique_id}';
             if (result > 0)
             {
                 MessageBox.Show($"Successfully activated {name}");
-                
+
             }
             else
             {
@@ -104,7 +104,12 @@ delete from users where unique_id = '{unique_id}';
             unique_id = row.Cells["unique_id"].Value.ToString();
             name = row.Cells["Name"].Value.ToString();
             namebox.Text = name;
-            
+
+        }
+
+        private void show_teacher_student_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

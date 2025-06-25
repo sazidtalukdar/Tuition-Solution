@@ -146,7 +146,7 @@ namespace Tuition_Solution
 
         private void registration_Load(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

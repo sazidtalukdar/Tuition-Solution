@@ -582,6 +582,7 @@
             Name = "Admin_Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin_Dashboard";
+            FormClosed += Admin_Dashboard_FormClosed;
             Load += Admin_Dashboard_Load;
             guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();

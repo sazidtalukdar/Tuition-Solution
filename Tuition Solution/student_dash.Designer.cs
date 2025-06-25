@@ -665,6 +665,7 @@
             Name = "student_dash";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "student_dash";
+            FormClosed += student_dash_FormClosed;
             Load += student_dash_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();

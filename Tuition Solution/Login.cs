@@ -8,7 +8,7 @@ namespace Tuition_Solution
 {
     public partial class Login : Form
     {
-        private string name { get;set;}
+        private string name { get; set; }
         private string phone { get; set; }
         private string role { get; set; }
         private string status { get; set; }
@@ -57,12 +57,12 @@ namespace Tuition_Solution
                     {
                         string name = reader["Name"].ToString();
                         string phone = reader["phone_number"].ToString();
-                        string gender = reader["gender"].ToString() ;
+                        string gender = reader["gender"].ToString();
                         string role = reader["role"].ToString();
                         string status = reader["status"].ToString();
                         string cpu = reader["cpu_id"].ToString();
                         string qunique_id = reader["unique_id"].ToString();
-                        this.name=name;
+                        this.name = name;
                         this.phone = phone;
                         this.role = role;
                         this.status = status;
@@ -72,7 +72,7 @@ namespace Tuition_Solution
 
                     }
 
-                    if (cpu_db_id == "cut" )
+                    if (cpu_db_id == "cut")
                     {
                         string query2 = $"update users set cpu_id = '{cpu_id}' where username = '{userbox.Text}'";
                         databse.ExecuteNonQuery(query2);
@@ -100,14 +100,14 @@ namespace Tuition_Solution
                             }
                             else if (role == "TEACHER")
                             {
-                                var t = new  teacher_desh(name, phone, unique_id);
+                                var t = new teacher_desh(name, phone, unique_id);
                                 t.Show();
                                 this.Hide();
                             }
                             else if (role == "STUDENT")
                             {
                                 admin();
-                                var s = new student_dash(name,phone,unique_id);
+                                var s = new student_dash(name, phone, unique_id);
                                 s.Show();
                                 this.Hide();
 
@@ -176,11 +176,12 @@ namespace Tuition_Solution
         private void admin()
         {
             string query = $"update users set cpu_id ='cut' where unique_id='{unique_id}'";
-                int res = databse.ExecuteNonQuery(query);
+            int res = databse.ExecuteNonQuery(query);
         }
 
-
-
-
-    }   
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }

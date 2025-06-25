@@ -144,6 +144,7 @@
             Name = "show_teacher_student";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "show_teacher_student";
+            FormClosed += show_teacher_student_FormClosed;
             Load += show_teacher_student_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
