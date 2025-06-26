@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ using System.Xml.Linq;
 
 namespace Tuition_Solution
 {
-    public partial class teacher_desh : Form , inertface
+    public partial class teacher_desh : Form, inertface
     {
 
         private string name;
@@ -22,6 +23,8 @@ namespace Tuition_Solution
         private string unique_id;
         private string student_id;
         private string request_id;
+        private string student_name;
+        private string student_phone;
         public teacher_desh(string name, string phone, string unique_id)
         {
 
@@ -97,7 +100,9 @@ namespace Tuition_Solution
 
 
                 name_teacher.Text = row.Cells["Student Name"].Value.ToString();
+                student_name = row.Cells["Student Name"].Value.ToString();
                 phone_teacher.Text = row.Cells["Phone Number"].Value.ToString();
+                student_phone = row.Cells["Phone Number"].Value.ToString();
                 subject_box.Text = row.Cells["Subject"].Value.ToString();
                 address_teacher.Text = row.Cells["Address"].Value.ToString();
                 student_id = row.Cells["Student ID"].Value.ToString();
@@ -131,7 +136,9 @@ namespace Tuition_Solution
 
 
                 name_teacher.Text = row.Cells["Student Name"].Value.ToString();
+                student_name= row.Cells["Student Name"].Value.ToString();
                 phone_teacher.Text = row.Cells["Phone Number"].Value.ToString();
+                student_phone = row.Cells["Phone Number"].Value.ToString();
                 subject_box.Text = row.Cells["Subject"].Value.ToString();
                 address_teacher.Text = row.Cells["Address"].Value.ToString();
                 student_id = row.Cells["Student ID"].Value.ToString();
@@ -323,6 +330,9 @@ update allocations set status = 'ACTIVE' where allocation_id = '{request_id}' an
             {
                 MessageBox.Show("Allocation accepted successfully.");
                 student_request_load();
+                string sms = $"Dear {student_name},\nYour request for tuition has been accepted. Please contact the teacher for further details.\nThank you.";
+                otp_and_code sms_code = new otp_and_code();
+                sms_code.SendSms(student_phone, sms);
 
             }
             else
@@ -363,7 +373,7 @@ update allocations set status = 'ACTIVE' where allocation_id = '{request_id}' an
 
         }
 
-     
+
 
         private void student_request_load()
         {
@@ -405,6 +415,9 @@ where al.status = 'PENDING' and u.role = 'STUDENT' and al.teacher_id = '{unique_
             student_request_load();
         }
 
+
+
+
+    }
        
     }
-}

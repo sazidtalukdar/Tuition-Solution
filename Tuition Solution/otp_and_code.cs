@@ -57,7 +57,7 @@ namespace Tuition_Solution
                 {
                     client.DownloadString(url);
                     //string response = client.DownloadString(url);
-                    MessageBox.Show("Otp is send to your number");
+                    MessageBox.Show(" sms sended ");
                     reader.Close();
                 }
             }
