@@ -41,13 +41,13 @@ namespace Tuition_Solution
                     else
                     {
                         string id = otp_and_code.get_code();
-                        string query = $"INSERT INTO users (phone_number, Name, username, password, gender, role, status, cpu_id,unique_id) " +
-                                       $"VALUES ('{phonebox.Text}', '{nmaebox.Text}', '{usernamebox.Text}', '{passbox.Text}', " +
+                        string query = $"insert into users (phone_number, Name, username, password, gender, role, status, cpu_id,unique_id) " +
+                                       $"values ('{phonebox.Text}', '{nmaebox.Text}', '{usernamebox.Text}', '{passbox.Text}', " +
                                        $"'{gender_check()}', '{role_check()}', 'SUSPENDED', '{log_res.GetProcessorId()}','{id}')";
-                        string query1 = $"INSERT INTO student_profiles (unique_id,student_id) " +
-                                       $"VALUES ('{id}','{id}')";
-                        string query2 = $"INSERT INTO teacher_profiles (unique_id,teacher_id) " +
-                                       $"VALUES ('{id}','{id}')";
+                        string query1 = $"insert into student_profiles (unique_id,student_id) " +
+                                       $"values ('{id}','{id}')";
+                        string query2 = $"insert into teacher_profiles (unique_id,teacher_id) " +
+                                       $"values ('{id}','{id}')";
 
                         string final_query = "";
                         if (role_check() == "STUDENT")
