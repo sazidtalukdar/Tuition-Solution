@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace Tuition_Solution
 {
-    public partial class teacher_desh : Form
+    public partial class teacher_desh : Form , inertface
     {
 
         private string name;
@@ -356,12 +356,14 @@ update allocations set status = 'ACTIVE' where allocation_id = '{request_id}' an
             id_box.Visible = false;
             id_box.Text = $"ID {unique_id}";
             load_data();
-            student_request_load();
+            inertface inter = this;
+            inter.student_request_load();
             dataGridView2.Visible = false;
 
 
         }
 
+     
 
         private void student_request_load()
         {
@@ -397,5 +399,12 @@ where al.status = 'PENDING' and u.role = 'STUDENT' and al.teacher_id = '{unique_
         {
             Application.Exit();
         }
+
+        void inertface.student_request_load()
+        {
+            student_request_load();
+        }
+
+       
     }
 }

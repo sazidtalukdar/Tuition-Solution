@@ -6,7 +6,7 @@ namespace Tuition_Solution
 {
     public class databse
     {
-        private static readonly string con = "Data Source=.;Initial Catalog=c#;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";//"Server=localhost;Database=C#;User Id=sa;Password=sazid999;";
+        private const string con = "Data Source=.;Initial Catalog=c#;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";//"Server=localhost;Database=C#;User Id=sa;Password=sazid999;";
 
         // for count
         public static int ExecuteScalar(string query)
